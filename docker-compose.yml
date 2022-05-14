@@ -1,8 +1,8 @@
 version: "3.7"
 
 services:
-    php:
-        container_name: php
+    web:
+        container_name: web
         build:
             context: ./
             dockerfile: ./docker/php/Dockerfile
