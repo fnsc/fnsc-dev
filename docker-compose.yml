@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+    php:
+        container_name: php
+        build:
+            context: ./
+            dockerfile: ./docker/php/Dockerfile
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - fnsc.dev
+        depends_on:
+            - mysql
+            - nginx
+
+    mysql:
+        container_name: mysql
+        image: mysql:8
+        environment:
+            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD}'
+            MYSQL_PASSWORD: '{DB_PASSWORD}'
+            MYSQL_USER: '${DB_USERNAME}'
+            SERVICE_TAGS: '${DB_SERVICE_TAG}'
+            SERVICE_NAME: '${DB_CONNECTION}'
+        networks:
+            - fnsc.dev
+
+    nginx:
+        container_name: nginx
+        image: nginx:1.21.6
+        tty: true
+        ports:
+            - 8100:80
+        volumes:
+            - ./:/var/www/html
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - fnsc.dev
+
+networks:
+    fnsc.dev:
+        driver: bridge
