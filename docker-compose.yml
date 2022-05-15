@@ -14,23 +14,31 @@ services:
             - mysql
             - nginx
 
+    assets:
+        container_name: assets
+        image: node:lts
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - fnsc.dev
+
     mysql:
         container_name: mysql
         image: mysql:8
         environment:
-            MYSQL_DATABASE: '${DB_DATABASE}'
-            MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD}'
-            MYSQL_PASSWORD: '{DB_PASSWORD}'
-            MYSQL_USER: '${DB_USERNAME}'
-            SERVICE_TAGS: '${DB_SERVICE_TAG}'
-            SERVICE_NAME: '${DB_CONNECTION}'
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USERNAME}
+            SERVICE_TAGS: ${DB_SERVICE_TAG}
+            SERVICE_NAME: ${DB_CONNECTION}
         networks:
             - fnsc.dev
 
     nginx:
         container_name: nginx
         image: nginx:1.21.6
-        tty: true
         ports:
             - 8100:80
         volumes:
