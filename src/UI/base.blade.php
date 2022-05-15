@@ -35,9 +35,6 @@
     {{-- Microsoft app capable --}}
     <meta name="msapplication-TitleImage" content="{{ asset('img/android-chrome-192x192.png') }}" />
     <meta name="msapplication-TitleColor" content="{{ $themeColor }}" />
-    {{-- Fonts --}}
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
     {{-- CSS Files --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" />
     @yield('css_files')

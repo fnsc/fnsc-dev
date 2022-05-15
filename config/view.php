@@ -37,10 +37,10 @@ return [
     'variables' => [
         'home' => [
             'title' => config('app.name'),
-            'themeColor' => '#0D1117',
-            'description' => 'I am a web developer from Brazil that works with Laravel and PHP.',
-            'author' => 'Gabriel Fonseca',
-            'keywords' => 'developer, backend, php, laravel',
+            'themeColor' => env('VIEW_VARIABLES_HOME_THEME_COLOR', '#FFF'),
+            'description' => env('VIEW_VARIABLES_HOME_DESCRIPTION', 'Lorem ipsum'),
+            'author' => env('VIEW_VARIABLES_HOME_AUTHOR', 'John Doe'),
+            'keywords' => env('VIEW_VARIABLES_HOME_KEYWORDS'),
         ],
     ],
 
