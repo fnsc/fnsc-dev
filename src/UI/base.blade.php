@@ -3,7 +3,7 @@
 <head>
     <base href="{{ url('/') }}" />
     <link rel="canonical" href="{{ url('/') }}" />
-    <title>{{ $title = config('app.name') }} | @yield('title')</title>
+    <title>{{ $title }} | @yield('title')</title>
     <meta charset="utf-8" />
     <meta name="robots" content="all" />
     <meta name="googlebot" content="all" />

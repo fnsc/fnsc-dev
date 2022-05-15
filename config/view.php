@@ -34,4 +34,14 @@ return [
         realpath(storage_path('framework/views'))
     ),
 
+    'variables' => [
+        'home' => [
+            'title' => config('app.name'),
+            'themeColor' => '#0D1117',
+            'description' => 'I am a backend developer with almost 5 years of experience, working with laravel and PHP.',
+            'author' => 'Gabriel Fonseca',
+            'keywords' => 'developer, backend, php, laravel',
+        ],
+    ],
+
 ];

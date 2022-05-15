@@ -14,7 +14,11 @@
 
     <rule ref="LeroyMerlin"/>
 
-     <rule ref="Generic.Files.InlineHTML.Found">
+    <rule ref="Generic.Files.InlineHTML.Found">
         <exclude-pattern>src/UI/*.blade.php</exclude-pattern>
     </rule>
+    <rule ref="SlevomatCodingStandard.Functions.RequireMultiLineCall.RequiredMultiLineCall">
+        <exclude-pattern>src/Presenters/Http/Controllers/*.php</exclude-pattern>
+    </rule>
+
 </ruleset>
