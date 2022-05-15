@@ -38,7 +38,7 @@ return [
         'home' => [
             'title' => config('app.name'),
             'themeColor' => '#0D1117',
-            'description' => 'I am a backend developer with almost 5 years of experience, working with laravel and PHP.',
+            'description' => 'I am a web developer from Brazil that works with Laravel and PHP.',
             'author' => 'Gabriel Fonseca',
             'keywords' => 'developer, backend, php, laravel',
         ],

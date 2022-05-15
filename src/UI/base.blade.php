@@ -18,32 +18,22 @@
     {{-- Facebook Twitter --}}
     <meta property="og:title" content="{{ $title }}"/>
     <meta property="og:site_name" content="{{ $title }}"/>
-    <meta property="og:image" content="{{ asset('img/image.png') }}"/>
+    <meta property="og:image" content="{{ asset('img/favicon-32x32.png') }}"/>
     <meta property="og:url" content="{{ url('/') }}"/>
     <meta property="og:description" content="{{ $description }}"/>
     <meta name="twitter:title" content="{{ $title }}"/>
-    <meta name="twitter:image" content="{{ asset('img/image.png') }}"/>
+    <meta name="twitter:image" content="{{ asset('img/favicon-32x32.png') }}"/>
     <meta name="twitter:url" content="{{ url('/') }}"/>
     <meta name="twitter:card" content="summary"/>
     {{-- Apple and Android app capable --}}
     <link rel="manifest" href="{{ asset('manifest.json') }}" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="{{ $themeColor }}" />
     <meta name="apple-mobile-web-app-title" content="{{ $title }}" />
-    <link rel="icon" href="{{ asset('img/favicon.ico') }}" />
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/favicon_57.png') }}" />
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/favicon_60.png') }}" />
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon_72.png') }}" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/favicon_76.png') }}" />
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/favicon_114.png') }}" />
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/favicon_120.png') }}" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/favicon_144.png') }}" />
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/favicon_152.png') }}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon_180.png') }}" />
-    <link rel="apple-touch-icon" sizes="512x512" href="{{ asset('img/favicon_512.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('img/favicon_120.png') }}" />
+    <link rel="icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.png') }}" />
     {{-- Microsoft app capable --}}
-    <meta name="msapplication-TitleImage" content="{{ asset('img/favicon_144.png') }}" />
+    <meta name="msapplication-TitleImage" content="{{ asset('img/android-chrome-192x192.png') }}" />
     <meta name="msapplication-TitleColor" content="{{ $themeColor }}" />
     {{-- Fonts --}}
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
