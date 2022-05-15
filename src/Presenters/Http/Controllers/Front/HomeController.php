@@ -23,6 +23,7 @@ class HomeController extends Controller
     {
         return ViewFactory::make('home.index')
             ->with([
+                'location' => 'Home',
                 'title' => $this->config->get('view.variables.home.title'),
                 'themeColor' => $this->config->get('view.variables.home.themeColor'),
                 'description' => $this->config->get('view.variables.home.description'),
