@@ -13,4 +13,8 @@
     <file>./tests</file>
 
     <rule ref="LeroyMerlin"/>
+
+     <rule ref="Generic.Files.InlineHTML.Found">
+        <exclude-pattern>src/UI/*.blade.php</exclude-pattern>
+    </rule>
 </ruleset>
