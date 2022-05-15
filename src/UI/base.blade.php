@@ -49,13 +49,15 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
     {{-- CSS Files --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" />
     @yield('css_files')
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        @yield('content')
+    </div>
     {{-- JS Files --}}
-    <script src="{{ asset('js/base.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('js_files')
 </body>
 </html>
