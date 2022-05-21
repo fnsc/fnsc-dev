@@ -1,5 +1,6 @@
 <?php
 
+use Fnsc\Presenters\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+    'as' => 'front',
+], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('.home.index');
 });
