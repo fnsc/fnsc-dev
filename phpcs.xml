@@ -13,4 +13,13 @@
     <file>./tests</file>
 
     <rule ref="LeroyMerlin"/>
+
+    <rule ref="Generic.Files.InlineHTML.Found">
+        <exclude-pattern>src/UI/*.blade.php</exclude-pattern>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Functions.RequireMultiLineCall.RequiredMultiLineCall">
+        <exclude-pattern>src/Presenters/Http/Controllers/*.php</exclude-pattern>
+        <exclude-pattern>config/view.php</exclude-pattern>
+    </rule>
+
 </ruleset>

@@ -15,6 +15,7 @@ return [
 
     'paths' => [
         resource_path('views'),
+        realpath(base_path('/src/UI')),
     ],
 
     /*
@@ -32,5 +33,15 @@ return [
         'VIEW_COMPILED_PATH',
         realpath(storage_path('framework/views'))
     ),
+
+    'variables' => [
+        'home' => [
+            'title' => config('app.name'),
+            'themeColor' => env('VIEW_VARIABLES_HOME_THEME_COLOR', '#FFF'),
+            'description' => env('VIEW_VARIABLES_HOME_DESCRIPTION', 'Lorem ipsum'),
+            'author' => env('VIEW_VARIABLES_HOME_AUTHOR', 'John Doe'),
+            'keywords' => env('VIEW_VARIABLES_HOME_KEYWORDS'),
+        ],
+    ],
 
 ];
