@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('social_media', function (Blueprint $table) {
             $table->string('id', 24)->index()->unique();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('avatar_url')->nullable();
-            $table->string('location')->nullable();
-            $table->longText('bio')->nullable();
-            $table->rememberToken();
+            $table->string('user_id');
+            $table->string('name')->unique();
+            $table->string('profile_url')->unique();
+            $table->string('username');
+            $table->string('icon_path');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('social_medias');
     }
 };
