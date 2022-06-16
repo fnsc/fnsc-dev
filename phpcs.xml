@@ -40,6 +40,7 @@
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint">
         <exclude-pattern>src/Presenters/CLI/*.php</exclude-pattern>
         <exclude-pattern>src/Infra/Models/Eloquent/*.php</exclude-pattern>
+        <exclude-pattern>database/factories/*.php</exclude-pattern>
     </rule>
     <rule ref="SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter">
         <exclude-pattern>src/Infra/Models/Eloquent/Casts/*.php</exclude-pattern>

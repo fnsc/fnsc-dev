@@ -9,9 +9,6 @@ use MongoDB\BSON\ObjectId;
 
 class UserFactory extends Factory
 {
-    /**
-     * @var string
-     */
     protected $model = User::class;
 
     /**

@@ -17,6 +17,9 @@ class SocialMediaRepositoryServiceProvider extends BaseServiceProvider implement
         );
     }
 
+    /**
+     * @return string[]
+     */
     public function provides(): array
     {
         return [

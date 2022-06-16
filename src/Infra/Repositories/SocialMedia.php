@@ -13,9 +13,7 @@ class SocialMedia implements SocialMediaRepository
 {
     public function store(SocialMediaEntity $socialMedia, UserEntity $user): SocialMediaEntity
     {
-        $socialMediaModel = $this->firstOrCreate(
-            new ObjectId($socialMedia->getId())
-        );
+        $socialMediaModel = $this->firstOrCreate($socialMedia->getId());
 
         if (!empty($socialMediaModel->getAttribute('id'))) {
             $this->setAttributes($socialMediaModel, $socialMedia, $user);
@@ -37,7 +35,8 @@ class SocialMedia implements SocialMediaRepository
 
     private function firstOrCreate(ObjectId $id): SocialMediaModel
     {
-        if ($socialMedia = SocialMediaModel::first((string) $id)) {
+        /* @phpstan-ignore-next-line  */
+        if ($socialMedia = SocialMediaModel::where('id', $id)->first()) {
             return $socialMedia;
         }
 
@@ -78,12 +77,8 @@ class SocialMedia implements SocialMediaRepository
 
     private function first(ObjectId $id): SocialMediaModel
     {
-        if (
-            !$socialMedia = SocialMediaModel::where(
-                'id',
-                (string) $id
-            )->first()
-        ) {
+        /* @phpstan-ignore-next-line */
+        if (!$socialMedia = SocialMediaModel::where('id', $id)->first()) {
             throw new DomainException('not found');
         }
 

@@ -14,6 +14,9 @@ class ConfigAdapterServiceProvider extends BaseServiceProvider implements Deferr
         $this->app->bind(ConfigContract::class, Config::class);
     }
 
+    /**
+     * @return string[]
+     */
     public function provides(): array
     {
         return [

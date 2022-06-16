@@ -13,6 +13,11 @@ class SocialMedia extends Model
     use HasFactory;
 
     /**
+     * @var string
+     */
+    protected $table = 'social_media';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>

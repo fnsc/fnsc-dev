@@ -31,12 +31,8 @@ class User implements UserRepository
 
     public function findByEmail(Email $email): UserEntity
     {
-        if (
-            !$userModel = UserModel::where(
-                'email',
-                (string) $email
-            )->first()
-        ) {
+        /* @phpstan-ignore-next-line */
+        if (!$userModel = UserModel::where('email', $email)->first()) {
             throw UserException::notFound();
         }
 
@@ -45,6 +41,7 @@ class User implements UserRepository
 
     private function firstOrCreate(ObjectId $id): UserModel
     {
+        /* @phpstan-ignore-next-line */
         if ($user = UserModel::where('id', (string) $id)->first()) {
             return $user;
         }
@@ -75,6 +72,7 @@ class User implements UserRepository
 
     private function first(ObjectId $id): UserModel
     {
+        /* @phpstan-ignore-next-line */
         if (!$user = UserModel::where('id', $id)->first()) {
             throw UserException::notFound();
         }

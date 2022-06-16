@@ -7,6 +7,9 @@ use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
 class Email implements CastsAttributes
 {
+    /**
+     * @phpstan-ignore-next-line
+     */
     public function get($model, string $key, $value, array $attributes)
     {
         if (empty($value)) {
@@ -16,6 +19,9 @@ class Email implements CastsAttributes
         return new EmailValueObject($value);
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     */
     public function set($model, string $key, $value, array $attributes)
     {
         return (string) $value;

@@ -14,6 +14,9 @@ class UserRepositoryServiceProvider extends BaseServiceProvider implements Defer
         $this->app->bind(UserRepositoryContract::class, UserRepository::class);
     }
 
+    /**
+     * @return string[]
+     */
     public function provides(): array
     {
         return [

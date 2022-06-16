@@ -3,7 +3,6 @@
 namespace Tests\Feature\Fnsc\Presenters\CLI;
 
 use Fnsc\Infra\Client\GitHub as GitHubClient;
-use Fnsc\Infra\Models\Eloquent\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery as m;
@@ -11,18 +10,14 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use Tests\TestCase;
 
-class FetchGitHubInfoTest extends TestCase
+class CreateNewUserFromGitHubDataTest extends TestCase
 {
-    use DatabaseMigrations;
     use RefreshDatabase;
+    use DatabaseMigrations;
 
-    public function testShouldStoreGitHubSocialMediaData(): void
+    public function testShouldCreateNewUserFromGitHubData(): void
     {
         // Set
-        User::factory()->create([
-            'email' => 'johnDoe@github.com',
-        ]);
-
         $gitHubClient = $this->instance(
             GitHubClient::class,
             m::mock(GitHubClient::class)
@@ -45,11 +40,11 @@ class FetchGitHubInfoTest extends TestCase
         $responseContent->expects()
             ->getContents()
             ->andReturn(
-                '{"login":"johnDoe","html_url":"https://github.com/johnDoe","email":"johnDoe@github.com"}'
+                '{"avatar_url":"https://avatars.githubusercontent.com/u/23709089?v=4","name":"Gabriel Fonseca","location":"São Paulo, São Paulo, Brazil","email":"gabrieldfnsc@gmail.com","bio":"A developer from Paracatu/MG living in São Paulo"}'
             );
 
         // Actions
-        $result = $this->artisan('social:fetch-github');
+        $result = $this->artisan('user:fetch-github');
 
         // Assertions
         /* @phpstan-ignore-next-line */

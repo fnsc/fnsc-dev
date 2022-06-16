@@ -8,13 +8,13 @@ return [
     'social_media' => [
         'linkedin' => [
             'name' => 'LinkedIn',
-            'icon_path' => public_path('img/social/linkedin.svg'),
+            'icon_path' => 'img/social/linkedin.svg',
             'profile_url' => env('USER_SOCIAL_LINKEDIN_URL', 'https://linkedin.com'),
         ],
 
         'github' => [
             'name' => 'GitHub',
-            'icon_path' => public_path('img/social/github.svg'),
+            'icon_path' => 'img/social/github.svg',
             'profile_url' => env('USER_SOCIAL_GITHUB_URL', 'https://github.com'),
             'api' => [
                 'url' => env('GITHUB_USER_ACCESS_URL', 'https://api.github.com/user'),
@@ -24,13 +24,13 @@ return [
 
         'dev' => [
             'name' => 'DEV Community',
-            'icon_path' => public_path('img/social/dev.svg'),
+            'icon_path' => 'img/social/dev.svg',
             'profile_url' => env('USER_SOCIAL_DEV_URL', 'https://dev.to'),
         ],
 
         'twitter' => [
             'name' => 'Twitter',
-            'icon_path' => public_path('img/social/twitter.svg'),
+            'icon_path' => 'img/social/twitter.svg',
             'profile_url' => env('USER_SOCIAL_TWITTER_URL', 'https://twitter.com'),
         ],
     ],
