@@ -4,6 +4,7 @@
 .phpunit.result.cache
 /.idea
 /.vscode
+/coverage
 /node_modules
 /public/css
 /public/hot

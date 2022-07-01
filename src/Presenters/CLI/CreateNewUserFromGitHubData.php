@@ -2,10 +2,11 @@
 
 namespace Fnsc\Presenters\CLI;
 
+use Exception;
 use Fnsc\Application\User\Store\InputBoundary;
 use Fnsc\Application\User\Store\Service;
 use Fnsc\Infra\Client\GitHub as GitHubClient;
-use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Console\Command;
 use Psr\Log\LoggerInterface;
 
@@ -43,9 +44,16 @@ class CreateNewUserFromGitHubData extends Command
             $this->service->handle($input);
 
             return self::SUCCESS;
-        } catch (GuzzleException $exception) {
+        } catch (ClientException $exception) {
             $this->logger->notice(
                 'Something went wrong while receiving info from GitHub.',
+                compact('exception')
+            );
+
+            return self::FAILURE;
+        } catch (Exception $exception) {
+            $this->logger->notice(
+                'Something unexpected has happened.',
                 compact('exception')
             );
 
