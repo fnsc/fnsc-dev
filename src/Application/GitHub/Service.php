@@ -28,7 +28,7 @@ class Service
         return new OutputBoundary($result);
     }
 
-    private function getSocialMedia(InputBoundary $input): SocialMedia
+    protected function getSocialMedia(InputBoundary $input): SocialMedia
     {
         return SocialMedia::getNewSocialMedia(
             $this->config->get('user.social_media.github.name'),
