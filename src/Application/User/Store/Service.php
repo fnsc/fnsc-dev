@@ -19,7 +19,7 @@ class Service
         return new OutputBoundary($result);
     }
 
-    private function getUser(InputBoundary $input): User
+    protected function getUser(InputBoundary $input): User
     {
         return User::getNewUser(
             $input->getName(),
