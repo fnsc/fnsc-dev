@@ -63,17 +63,17 @@ class User
     }
 
     /**
-     * @return string
+     * @return Email
      */
-    public function getEmail(): string
+    public function getEmail(): Email
     {
         return $this->email;
     }
 
     /**
-     * @return string
+     * @return Url
      */
-    public function getAvatarUrl(): string
+    public function getAvatarUrl(): Url
     {
         return $this->avatarUrl;
     }
