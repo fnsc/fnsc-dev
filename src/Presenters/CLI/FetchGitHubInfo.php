@@ -7,7 +7,7 @@ use Fnsc\Application\GitHub\Service;
 use Fnsc\Application\GitHub\InputBoundary;
 use Fnsc\Domain\Exceptions\User as UserException;
 use Fnsc\Infra\Client\GitHub as GitHubClient;
-use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Console\Command;
 use Psr\Log\LoggerInterface;
 
@@ -49,7 +49,7 @@ class FetchGitHubInfo extends Command
             $this->service->handle($input);
 
             return self::SUCCESS;
-        } catch (GuzzleException $exception) {
+        } catch (ClientException $exception) {
             $this->logger->notice(
                 'Something went wrong while receiving info from GitHub.',
                 compact('exception')
