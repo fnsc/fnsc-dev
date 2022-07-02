@@ -28,7 +28,7 @@ class GitHub
     protected function getOptions(): array
     {
         $options = [];
-        $options['headers'] = $this->getHeader();
+        $options['headers'] = $this->getHeaders();
 
         return $options;
     }
@@ -36,7 +36,7 @@ class GitHub
     /**
      * @return string[]
      */
-    private function getHeader(): array
+    private function getHeaders(): array
     {
         return [
             'Authorization' => 'Bearer ' . $this->config->get(
