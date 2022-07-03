@@ -57,7 +57,7 @@ class User extends Authenticatable
     /**
      * @return HasMany
      */
-    public function socialMedias(): HasMany
+    public function socialMedia(): HasMany
     {
         return $this->hasMany(SocialMedia::class);
     }
