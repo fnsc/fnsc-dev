@@ -3,7 +3,6 @@
 namespace Fnsc\Infra\Models\Eloquent;
 
 use Database\Factories\SocialMediaFactory;
-use Fnsc\Application\Contracts\Config;
 use Fnsc\Infra\Models\Eloquent\Casts\ObjectId;
 use Fnsc\Infra\Models\Eloquent\Casts\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -53,8 +52,6 @@ class SocialMedia extends Model
      */
     protected static function newFactory(): SocialMediaFactory
     {
-        $config = app(Config::class);
-
-        return new SocialMediaFactory($config);
+        return new SocialMediaFactory();
     }
 }
