@@ -1,1 +1,52 @@
 @import "bootstrap";
+
+body {
+  background-color: #f1f1f1;
+  color: #22272E;
+}
+
+svg {
+    fill: #22272E;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #22272E;
+        color: #86919C;
+    }
+
+    svg {
+        fill: #86919C;
+    }
+}
+
+.avatar {
+    margin-top: 2em;
+}
+
+.avatar-img {
+    border-radius: 50%;
+    max-height: 15em;
+}
+
+.icon-anchor:not(:last-child) {
+    margin-right: 1.5em;
+}
+
+svg.icon-img {
+    max-height: 3em;
+    max-width: 3em;
+    padding: 0.5em;
+}
+
+svg.icon-img::before {
+    transform: scaleY(0);
+    transition: transform .2s,
+                width .4s cubic-bezier(1,0,0,1) .2s,
+                background-color .1s;
+}
+
+svg.icon-img::before:hover,
+svg.icon-img::before {
+    transform: scaleY(1);
+}

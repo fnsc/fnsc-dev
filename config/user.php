@@ -1,9 +1,7 @@
 <?php
 
 return [
-    'authorized_user' => [
-        env('AUTHORIZED_USER_EMAIL'),
-    ],
+    'authorized_user' => env('AUTHORIZED_USER_EMAIL'),
 
     'social_media' => [
         'linkedin' => [

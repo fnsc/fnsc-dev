@@ -33,6 +33,26 @@ class SocialMedia implements SocialMediaRepository
         );
     }
 
+    /**
+     * @param UserEntity $user
+     * @return array|SocialMediaEntity[]
+     */
+    public function getUserSocialMedia(UserEntity $user): array
+    {
+        $socialMedia = [];
+        /* @phpstan-ignore-next-line */
+        $socialMediaCollection = SocialMediaModel::where(
+            'user_id',
+            $user->getId()
+        )->all();
+
+        foreach ($socialMediaCollection as $socialMediaModel) {
+            $socialMedia[] = $this->getSocialMediaEntity($socialMediaModel);
+        }
+
+        return $socialMedia;
+    }
+
     private function firstOrCreate(ObjectId $id): SocialMediaModel
     {
         /* @phpstan-ignore-next-line  */
