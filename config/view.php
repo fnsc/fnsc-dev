@@ -15,7 +15,7 @@ return [
 
     'paths' => [
         resource_path('views'),
-        realpath(base_path('/src/UI')),
+        realpath(base_path('/src/Presenters/GUI')),
     ],
 
     /*

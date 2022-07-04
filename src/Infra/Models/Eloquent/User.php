@@ -1,16 +1,22 @@
 <?php
 
-namespace App\Models;
+namespace Fnsc\Infra\Models\Eloquent;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Database\Factories\UserFactory;
+use Fnsc\Infra\Models\Eloquent\Casts\Email;
+use Fnsc\Infra\Models\Eloquent\Casts\ObjectId;
+use Fnsc\Infra\Models\Eloquent\Casts\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +27,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar_url',
+        'location',
+        'bio',
     ];
 
     /**
@@ -39,6 +48,25 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'id' => ObjectId::class,
+        'avatar_url' => Url::class,
+        'email' => Email::class,
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @return HasMany
+     */
+    public function socialMedia(): HasMany
+    {
+        return $this->hasMany(SocialMedia::class);
+    }
+
+    /**
+     * @return UserFactory
+     */
+    protected static function newFactory(): UserFactory
+    {
+        return new UserFactory();
+    }
 }

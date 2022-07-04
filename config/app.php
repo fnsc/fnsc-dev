@@ -185,6 +185,9 @@ return [
         /*
          * Package Service Providers...
          */
+        Fnsc\Infra\Providers\ConfigAdapterServiceProvider::class,
+        Fnsc\Infra\Providers\SocialMediaRepositoryServiceProvider::class,
+        Fnsc\Infra\Providers\UserRepositoryServiceProvider::class,
 
         /*
          * Application Service Providers...
