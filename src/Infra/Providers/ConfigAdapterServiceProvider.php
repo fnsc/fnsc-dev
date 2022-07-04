@@ -20,7 +20,7 @@ class ConfigAdapterServiceProvider extends BaseServiceProvider implements Deferr
     public function provides(): array
     {
         return [
-            Config::class,
+            ConfigContract::class,
         ];
     }
 }

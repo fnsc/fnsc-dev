@@ -23,7 +23,7 @@ class SocialMediaRepositoryServiceProvider extends BaseServiceProvider implement
     public function provides(): array
     {
         return [
-            SocialMediaRepository::class,
+            SocialMediaRepositoryContract::class,
         ];
     }
 }

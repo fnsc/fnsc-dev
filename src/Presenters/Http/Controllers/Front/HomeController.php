@@ -3,11 +3,11 @@
 namespace Fnsc\Presenters\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use Fnsc\Application\Contracts\Config;
 use Fnsc\Application\Home\OutputBoundary;
 use Fnsc\Application\Home\Service;
 use Fnsc\Presenters\Transformers\SocialMedia as SocialMediaTransformer;
 use Fnsc\Presenters\Transformers\User as UserTransformer;
-use Illuminate\Config\Repository as Config;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\View as ViewFactory;
 

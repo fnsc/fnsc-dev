@@ -19,7 +19,7 @@ class SocialMedia
             ) . '#' . strtolower(
                 $socialMedia->getName()
             ),
-            'profileUrl' => $socialMedia->getProfileUrl(),
+            'profileUrl' => (string) $socialMedia->getProfileUrl(),
         ];
     }
 }

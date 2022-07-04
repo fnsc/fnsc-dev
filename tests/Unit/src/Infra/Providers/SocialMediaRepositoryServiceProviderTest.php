@@ -2,7 +2,7 @@
 
 namespace Fnsc\Infra\Providers;
 
-use Fnsc\Infra\Repositories\SocialMedia;
+use Fnsc\Domain\Contracts\SocialMediaRepository;
 use Illuminate\Foundation\Application;
 use PHPUnit\Framework\TestCase;
 
@@ -18,6 +18,6 @@ class SocialMediaRepositoryServiceProviderTest extends TestCase
         $result = $serviceProvider->provides();
 
         // Assertions
-        $this->assertSame([SocialMedia::class], $result);
+        $this->assertSame([SocialMediaRepository::class], $result);
     }
 }

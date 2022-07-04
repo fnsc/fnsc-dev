@@ -15,7 +15,7 @@ class User
         return [
             'name' => $user->getName(),
             'bio' => $user->getBio(),
-            'avatarUrl' => $user->getAvatarUrl(),
+            'avatarUrl' => (string) $user->getAvatarUrl(),
             'location' => $user->getLocation(),
         ];
     }

@@ -20,7 +20,7 @@ class UserRepositoryServiceProvider extends BaseServiceProvider implements Defer
     public function provides(): array
     {
         return [
-            UserRepository::class,
+            UserRepositoryContract::class,
         ];
     }
 }

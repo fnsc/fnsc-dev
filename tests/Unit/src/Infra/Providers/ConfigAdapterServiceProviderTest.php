@@ -2,7 +2,7 @@
 
 namespace Fnsc\Infra\Providers;
 
-use Fnsc\Infra\Adapters\Config;
+use Fnsc\Application\Contracts\Config;
 use Illuminate\Foundation\Application;
 use PHPUnit\Framework\TestCase;
 

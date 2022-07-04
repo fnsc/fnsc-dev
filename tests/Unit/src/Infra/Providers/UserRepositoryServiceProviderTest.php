@@ -2,7 +2,7 @@
 
 namespace Fnsc\Infra\Providers;
 
-use Fnsc\Infra\Repositories\User;
+use Fnsc\Domain\Contracts\UserRepository;
 use Illuminate\Foundation\Application;
 use PHPUnit\Framework\TestCase;
 
@@ -18,6 +18,6 @@ class UserRepositoryServiceProviderTest extends TestCase
         $result = $serviceProvider->provides();
 
         // Assertions
-        $this->assertSame([User::class], $result);
+        $this->assertSame([UserRepository::class], $result);
     }
 }

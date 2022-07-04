@@ -6,6 +6,7 @@ services:
         build:
             context: ./
             dockerfile: ./docker/php/Dockerfile
+        working_dir: /var/www/html
         volumes:
             - ./:/var/www/html
         networks:
@@ -39,6 +40,7 @@ services:
     nginx:
         container_name: nginx
         image: nginx:1.21.6
+        working_dir: /var/www/html
         ports:
             - 8080:80
         volumes:

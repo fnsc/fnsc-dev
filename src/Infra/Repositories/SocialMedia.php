@@ -44,7 +44,7 @@ class SocialMedia implements SocialMediaRepository
         $socialMediaCollection = SocialMediaModel::where(
             'user_id',
             $user->getId()
-        )->all();
+        )->get();
 
         foreach ($socialMediaCollection as $socialMediaModel) {
             $socialMedia[] = $this->getSocialMediaEntity($socialMediaModel);
