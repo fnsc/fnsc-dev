@@ -14,12 +14,19 @@ class SocialMedia
     {
         return [
             'name' => $socialMedia->getName(),
-            'iconPath' => asset(
-                $socialMedia->getIconPath()
-            ) . '#' . strtolower(
-                $socialMedia->getName()
-            ),
+            'iconPath' => $this->getIconPath($socialMedia),
             'profileUrl' => (string) $socialMedia->getProfileUrl(),
         ];
+    }
+
+    /**
+     * @param SocialMediaEntity $socialMedia
+     * @return string
+     */
+    private function getIconPath(SocialMediaEntity $socialMedia): string
+    {
+        $name = str_replace(' ', '_', strtolower($socialMedia->getName()));
+
+        return asset($socialMedia->getIconPath()) . '#' . $name;
     }
 }

@@ -5,6 +5,7 @@ namespace Fnsc\Application\Home;
 use Fnsc\Application\Contracts\Config;
 use Fnsc\Domain\Contracts\SocialMediaRepository;
 use Fnsc\Domain\Contracts\UserRepository;
+use Fnsc\Domain\Entities\SocialMedia;
 use Fnsc\Domain\ValueObjects\Email;
 
 class Service
@@ -23,6 +24,32 @@ class Service
 
         $socialMedia = $this->socialMediaRepository->getUserSocialMedia($user);
 
-        return new OutputBoundary($user, $socialMedia);
+        return new OutputBoundary(
+            $user,
+            array_merge($socialMedia, $this->getAdditionalSocialMedia())
+        );
+    }
+
+    /**
+     * @return SocialMedia[]
+     */
+    private function getAdditionalSocialMedia(): array
+    {
+        $socialMedia = [];
+
+        foreach ($this->config->get('user.social_media') as $socialNetwork) {
+            if ('GitHub' === $socialNetwork['name']) {
+                continue;
+            }
+
+            $socialMedia[] = SocialMedia::getNewSocialMedia(
+                $socialNetwork['name'],
+                $this->config->get('user.authorized_user'),
+                $socialNetwork['profile_url'],
+                $socialNetwork['icon_path'],
+            );
+        }
+
+        return $socialMedia;
     }
 }
