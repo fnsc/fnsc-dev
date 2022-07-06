@@ -26,11 +26,14 @@ class Service
 
         return new OutputBoundary(
             $user,
-            array_merge($socialMedia, $this->getAdditionalSocialMedia())
+            array_merge($socialMedia, $this->getAdditionalSocialMedia()),
+            $this->getViewVars()
         );
     }
 
     /**
+     * This will be removed when all integration services are done
+     *
      * @return SocialMedia[]
      */
     private function getAdditionalSocialMedia(): array
@@ -51,5 +54,24 @@ class Service
         }
 
         return $socialMedia;
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    private function getViewVars(): array
+    {
+        return [
+            'location' => 'Home',
+            'title' => $this->config->get('view.variables.home.title'),
+            'themeColor' => $this->config->get(
+                'view.variables.home.themeColor'
+            ),
+            'description' => $this->config->get(
+                'view.variables.home.description'
+            ),
+            'author' => $this->config->get('view.variables.home.author'),
+            'keywords' => $this->config->get('view.variables.home.keywords'),
+        ];
     }
 }
