@@ -14,8 +14,9 @@ svg {
 }
 
 .avatar-img {
-    border-radius: 50%;
     max-height: 15em;
+    border-radius: 50%;
+    border: 1px solid #444C56;
 }
 
 .icon-anchor:not(:last-child) {

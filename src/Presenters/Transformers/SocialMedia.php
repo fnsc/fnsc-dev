@@ -27,6 +27,10 @@ class SocialMedia
     {
         $name = str_replace(' ', '_', strtolower($socialMedia->getName()));
 
-        return asset($socialMedia->getIconPath()) . '#' . $name;
+        if ('local' === config('app.env')) {
+            return asset($socialMedia->getIconPath()) . '#' . $name;
+        }
+
+        return secure_asset($socialMedia->getIconPath()) . '#' . $name;
     }
 }
