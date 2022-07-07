@@ -13,6 +13,7 @@ class SocialMedia
     public function transform(SocialMediaEntity $socialMedia): array
     {
         return [
+            'id' => (string) $socialMedia->getId(),
             'name' => $socialMedia->getName(),
             'iconPath' => $this->getIconPath($socialMedia),
             'profileUrl' => (string) $socialMedia->getProfileUrl(),

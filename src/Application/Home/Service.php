@@ -57,7 +57,7 @@ class Service
     }
 
     /**
-     * @return array<string, string>
+     * @return array<string, mixed>
      */
     private function getViewVars(): array
     {
@@ -72,6 +72,19 @@ class Service
             ),
             'author' => $this->config->get('view.variables.home.author'),
             'keywords' => $this->config->get('view.variables.home.keywords'),
+            'heart' => [
+                'url' => $this->getHeartUrl(),
+            ],
         ];
+    }
+
+    /**
+     * @return string
+     */
+    private function getHeartUrl(): string
+    {
+        return 'local' === config('app.env')
+            ? asset('img/heart.svg') . '#heart'
+            : secure_asset('img/heart.svg') . '#heart';
     }
 }
