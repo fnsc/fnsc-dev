@@ -9,7 +9,7 @@
         <div class="col-12 mt-1">
             <p class="text-center" v-text="user.bio"></p>
         </div>
-        <div class="col-12 mt-1 text-center">
+        <div class="col-12 mt-1 d-flex flex-wrap justify-content-center">
             <a
                 v-for="socialNetwork in social_media"
                 :key="socialNetwork.id" :href="socialNetwork.profileUrl"
