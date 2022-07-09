@@ -3,19 +3,19 @@
 namespace Fnsc\Presenters\Transformers;
 
 use Fnsc\Application\Contracts\UrlGenerator;
-use Fnsc\Domain\ValueObjects\ViewVars;
+use Fnsc\Domain\ValueObjects\ViewVars as ViewVarsValueObject;
 
-class ViewVarsTransformer
+class ViewVars
 {
     public function __construct(private readonly UrlGenerator $urlGenerator)
     {
     }
 
     /**
-     * @param ViewVars $viewVars
+     * @param ViewVarsValueObject $viewVars
      * @return array<string, array<string, array<string, string>>|string>
      */
-    public function transform(ViewVars $viewVars): array
+    public function transform(ViewVarsValueObject $viewVars): array
     {
         return [
             'title' => $viewVars->getTitle(),

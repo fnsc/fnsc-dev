@@ -38,7 +38,7 @@ return [
         'home' => [
             'title' => config('app.name'),
             'themeColor' => env('VIEW_VARIABLES_HOME_THEME_COLOR', '#FFF'),
-            'keywords' => env('VIEW_VARIABLES_HOME_KEYWORDS'),
+            'keywords' => env('VIEW_VARIABLES_HOME_KEYWORDS', 'lorem, ipsum, dolor'),
             'icons' => [
                 'heart' => [
                     'path' => 'img/heart.svg#heart',

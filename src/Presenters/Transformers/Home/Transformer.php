@@ -5,7 +5,7 @@ namespace Fnsc\Presenters\Transformers\Home;
 use Fnsc\Application\Home\OutputBoundary;
 use Fnsc\Presenters\Transformers\SocialMedia as SocialMediaTransformer;
 use Fnsc\Presenters\Transformers\User as UserTransformer;
-use Fnsc\Presenters\Transformers\ViewVarsTransformer;
+use Fnsc\Presenters\Transformers\ViewVars as ViewVarsTransformer;
 
 class Transformer
 {
