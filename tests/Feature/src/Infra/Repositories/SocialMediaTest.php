@@ -20,33 +20,9 @@ class SocialMediaTest extends TestCase
     public function testShouldStoreNewSocialMedia(): void
     {
         // Set
-        /** @phpstan-ignore-next-line */
-        $user = UserModel::factory()->create([
-            'id' => (string) new ObjectId('62c1eb78f0dc65e8d4063cc0'),
-        ])->first();
-
-        $user = UserEntity::getNewUser(
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('name'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('avatar_url'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('location'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('bio'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('email'),
-            /** @phpstan-ignore-next-line */
-            (string) $user->getAttribute('id')
-        );
-
-        $socialMedia = SocialMediaEntity::getNewSocialMedia(
-            'GitHub',
-            'johnDoe',
-            'https://github.com/johnDoe',
-            'img/social/github.svg',
-            '62c1e86b564afba894002110'
-        );
+        $user = $this->getUser();
+        $user = $this->getUserEntity($user);
+        $socialMedia = $this->getSocialMediaEntity();
 
         $repository = new SocialMedia();
 
@@ -71,34 +47,9 @@ class SocialMediaTest extends TestCase
     public function testShouldUpdateSocialMediaThatAlreadyExists(): void
     {
         // Set
-        /** @phpstan-ignore-next-line */
-        $user = UserModel::factory()->create([
-            'id' => (string) new ObjectId('62c1eb78f0dc65e8d4063cc0'),
-        ])->first();
-
-        SocialMediaModel::factory()->create([
-            'name' => 'GitHub',
-            'username' => 'johnDoe',
-            'profile_url' => 'https://github.com/johnDoe',
-            'icon_path' => 'img/social/github.svg',
-            'id' => '62c1e86b564afba894002110',
-        ]);
-
-        $user = UserEntity::getNewUser(
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('name'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('avatar_url'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('location'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('bio'),
-            /** @phpstan-ignore-next-line */
-            $user->getAttribute('email'),
-            /** @phpstan-ignore-next-line */
-            (string) $user->getAttribute('id')
-        );
-
+        $user = $this->getUser();
+        $user = $this->getUserEntity($user);
+        $this->storeSocialMedia();
         $socialMedia = SocialMediaEntity::getNewSocialMedia(
             'GitHub',
             'johnDoe1',
@@ -125,5 +76,63 @@ class SocialMediaTest extends TestCase
             'https://github.com/johnDoe1',
             (string) $result->getProfileUrl()
         );
+    }
+
+    public function testShouldGetUserSocialMedia(): void
+    {
+        // Set
+        $user = $this->getUser();
+        $user = $this->getUserEntity($user);
+        $this->storeSocialMedia();
+
+        $repository = new SocialMedia();
+
+        // Actions
+        $result = $repository->getUserSocialMedia($user);
+
+        // Assertions
+        $this->assertInstanceOf(SocialMediaEntity::class, current($result));
+    }
+
+    private function getUser(): mixed
+    {
+        /** @phpstan-ignore-next-line */
+        return UserModel::factory()->create([
+            'id' => (string) new ObjectId('62c1eb78f0dc65e8d4063cc0'),
+        ])->first();
+    }
+
+    private function getUserEntity(UserModel $user): UserEntity
+    {
+        return UserEntity::getNewUser(
+            $user->getAttribute('name'),
+            $user->getAttribute('avatar_url'),
+            $user->getAttribute('location'),
+            $user->getAttribute('bio'),
+            $user->getAttribute('email'),
+            (string) $user->getAttribute('id')
+        );
+    }
+
+    private function getSocialMediaEntity(): SocialMediaEntity
+    {
+        return SocialMediaEntity::getNewSocialMedia(
+            'GitHub',
+            'johnDoe',
+            'https://github.com/johnDoe',
+            'img/social/github.svg',
+            '62c1e86b564afba894002110'
+        );
+    }
+
+    private function storeSocialMedia(): void
+    {
+        SocialMediaModel::factory()->create([
+            'name' => 'GitHub',
+            'username' => 'johnDoe',
+            'profile_url' => 'https://github.com/johnDoe',
+            'icon_path' => 'img/social/github.svg',
+            'id' => '62c1e86b564afba894002110',
+        ]);
     }
 }
