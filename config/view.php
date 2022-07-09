@@ -38,9 +38,12 @@ return [
         'home' => [
             'title' => config('app.name'),
             'themeColor' => env('VIEW_VARIABLES_HOME_THEME_COLOR', '#FFF'),
-            'description' => env('VIEW_VARIABLES_HOME_DESCRIPTION', 'Lorem ipsum'),
-            'author' => env('VIEW_VARIABLES_HOME_AUTHOR', 'John Doe'),
             'keywords' => env('VIEW_VARIABLES_HOME_KEYWORDS'),
+            'icons' => [
+                'heart' => [
+                    'path' => 'img/heart.svg#heart',
+                ],
+            ],
         ],
     ],
 

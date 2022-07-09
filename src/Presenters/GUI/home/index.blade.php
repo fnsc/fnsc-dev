@@ -6,6 +6,6 @@
     <container-component
         :user="{{ json_encode($user) }}"
         :social_media="{{ json_encode($socialMedia) }}"
-        :heart="{{ json_encode($heart) }}"
+        :heart="{{ json_encode($icons['heart']) }}"
     ></container-component>
 @endsection

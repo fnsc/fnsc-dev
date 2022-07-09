@@ -6,10 +6,14 @@ use Fnsc\Application\Contracts\Config;
 use Fnsc\Domain\Contracts\SocialMediaRepository;
 use Fnsc\Domain\Contracts\UserRepository;
 use Fnsc\Domain\Entities\SocialMedia;
+use Fnsc\Domain\Entities\User;
 use Fnsc\Domain\ValueObjects\Email;
+use Fnsc\Domain\ValueObjects\ViewVars;
 
 class Service
 {
+    private const LOCATION = 'Home';
+
     public function __construct(
         private readonly SocialMediaRepository $socialMediaRepository,
         private readonly UserRepository $userRepository,
@@ -27,7 +31,7 @@ class Service
         return new OutputBoundary(
             $user,
             array_merge($socialMedia, $this->getAdditionalSocialMedia()),
-            $this->getViewVars()
+            $this->getViewVars($user)
         );
     }
 
@@ -56,35 +60,18 @@ class Service
         return $socialMedia;
     }
 
-    /**
-     * @return array<string, mixed>
-     */
-    private function getViewVars(): array
+    private function getViewVars(User $user): ViewVars
     {
-        return [
-            'location' => 'Home',
-            'title' => $this->config->get('view.variables.home.title'),
-            'themeColor' => $this->config->get(
-                'view.variables.home.themeColor'
-            ),
-            'description' => $this->config->get(
-                'view.variables.home.description'
-            ),
-            'author' => $this->config->get('view.variables.home.author'),
-            'keywords' => $this->config->get('view.variables.home.keywords'),
-            'heart' => [
-                'url' => $this->getHeartUrl(),
-            ],
-        ];
-    }
+        $userName = $user->getName();
 
-    /**
-     * @return string
-     */
-    private function getHeartUrl(): string
-    {
-        return 'local' === config('app.env')
-            ? asset('img/heart.svg') . '#heart'
-            : secure_asset('img/heart.svg') . '#heart';
+        return new ViewVars(
+            self::LOCATION,
+            $userName,
+            $user->getBio(),
+            $userName,
+            $this->config->get('view.variables.home.themeColor'),
+            $this->config->get('view.variables.home.keywords'),
+            $this->config->get('view.variables.home.icons'),
+        );
     }
 }

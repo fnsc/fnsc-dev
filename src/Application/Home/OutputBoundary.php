@@ -4,18 +4,19 @@ namespace Fnsc\Application\Home;
 
 use Fnsc\Domain\Entities\SocialMedia;
 use Fnsc\Domain\Entities\User;
+use Fnsc\Domain\ValueObjects\ViewVars;
 
 class OutputBoundary
 {
     /**
-     * @param User                  $user
-     * @param SocialMedia[]         $socialMedia
-     * @param array<string, string> $baseViewVars
+     * @param User          $user
+     * @param SocialMedia[] $socialMedia
+     * @param ViewVars      $baseViewVars
      */
     public function __construct(
         private readonly User $user,
         private readonly array $socialMedia,
-        private readonly array $baseViewVars
+        private readonly ViewVars $baseViewVars
     ) {
     }
 
@@ -35,10 +36,7 @@ class OutputBoundary
         return $this->socialMedia;
     }
 
-    /**
-     * @return array<string, string>
-     */
-    public function getBaseViewVars(): array
+    public function getBaseViewVars(): ViewVars
     {
         return $this->baseViewVars;
     }

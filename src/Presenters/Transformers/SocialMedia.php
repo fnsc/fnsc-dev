@@ -2,10 +2,15 @@
 
 namespace Fnsc\Presenters\Transformers;
 
+use Fnsc\Application\Contracts\UrlGenerator;
 use Fnsc\Domain\Entities\SocialMedia as SocialMediaEntity;
 
 class SocialMedia
 {
+    public function __construct(private readonly UrlGenerator $urlGenerator)
+    {
+    }
+
     /**
      * @param SocialMediaEntity $socialMedia
      * @return array<string, string>
@@ -15,23 +20,10 @@ class SocialMedia
         return [
             'id' => (string) $socialMedia->getId(),
             'name' => $socialMedia->getName(),
-            'iconPath' => $this->getIconPath($socialMedia),
+            'iconPath' => $this->urlGenerator->asset(
+                $socialMedia->getIconPath()
+            ),
             'profileUrl' => (string) $socialMedia->getProfileUrl(),
         ];
-    }
-
-    /**
-     * @param SocialMediaEntity $socialMedia
-     * @return string
-     */
-    private function getIconPath(SocialMediaEntity $socialMedia): string
-    {
-        $name = str_replace(' ', '_', strtolower($socialMedia->getName()));
-
-        if ('local' === config('app.env')) {
-            return asset($socialMedia->getIconPath()) . '#' . $name;
-        }
-
-        return secure_asset($socialMedia->getIconPath()) . '#' . $name;
     }
 }
