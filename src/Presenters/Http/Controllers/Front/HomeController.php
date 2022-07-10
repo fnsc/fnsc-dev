@@ -3,17 +3,22 @@
 namespace Fnsc\Presenters\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Config\Repository as Config;
+use Exception;
+use Fnsc\Application\Home\Service;
+use Fnsc\Domain\Exceptions\User as UserException;
+use Fnsc\Presenters\Transformers\Home\Transformer;
 use Illuminate\Contracts\View\View as ViewContract;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\View as ViewFactory;
+use Psr\Log\LoggerInterface;
 
 class HomeController extends Controller
 {
-    /**
-     * @param Config $config
-     */
-    public function __construct(private readonly Config $config)
-    {
+    public function __construct(
+        private readonly Service $service,
+        private readonly Transformer $transformer,
+        private readonly LoggerInterface $logger
+    ) {
     }
 
     /**
@@ -21,14 +26,26 @@ class HomeController extends Controller
      */
     public function index(): ViewContract
     {
-        return ViewFactory::make('home.index')
-            ->with([
-                'location' => 'Home',
-                'title' => $this->config->get('view.variables.home.title'),
-                'themeColor' => $this->config->get('view.variables.home.themeColor'),
-                'description' => $this->config->get('view.variables.home.description'),
-                'author' => $this->config->get('view.variables.home.author'),
-                'keywords' => $this->config->get('view.variables.home.keywords'),
-            ]);
+        try {
+            $result = $this->service->handle();
+            $transformedOutput = $this->transformer->transform($result);
+
+            return ViewFactory::make('home.index')
+                ->with($transformedOutput);
+        } catch (UserException $exception) {
+            $this->logger->error(
+                '[Home][User] Something went wrong while get user data.',
+                compact('exception')
+            );
+
+            return abort(Response::HTTP_FORBIDDEN, 'Try again later');
+        } catch (Exception $exception) {
+            $this->logger->error(
+                '[Home] Something unexpected happened.',
+                compact('exception')
+            );
+
+            return abort(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 }

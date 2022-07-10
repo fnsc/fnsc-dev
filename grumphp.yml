@@ -9,4 +9,4 @@ grumphp:
     tasks:
         phpcs: null
         phpstan:
-            level: 8
+            configuration: ./phpstan.neon
