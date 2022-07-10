@@ -17,12 +17,12 @@ class ConfigTest extends TestCase
         $repository->expects($this->once())
             ->method('get')
             ->with('user.authorized_user')
-            ->willReturn(['johnDoe@github.com']);
+            ->willReturn('johnDoe@github.com');
 
         // Actions
         $result = $config->get('user.authorized_user');
 
         // Assertions
-        $this->assertSame(['johnDoe@github.com'], $result);
+        $this->assertSame('johnDoe@github.com', $result);
     }
 }
