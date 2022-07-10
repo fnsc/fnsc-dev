@@ -49,9 +49,7 @@
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "@php artisan storage:link",
-            "chmod -R 777 storage",
-            "@php artisan user:fetch-github",
-            "@php artisan social:fetch-github"
+            "chmod -R 777 storage"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
