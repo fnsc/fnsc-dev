@@ -29,17 +29,17 @@
             "Fnsc\\": "src/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
             "Fnsc\\": "tests/Unit/src/",
             "Tests\\": "tests/",
             "Tests\\Feature\\Fnsc\\": "tests/Feature/src/"
-        },
-        "files": [
-            "app/helpers.php"
-        ]
+        }
     },
     "scripts": {
         "post-autoload-dump": [
