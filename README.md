@@ -50,3 +50,5 @@ Steps:
 1. ```shell
    docker-compose exec web php artisan migrate
    ```
+
+Finally access [http://localhost:8080](http://localhost:8080).
