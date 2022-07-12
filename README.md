@@ -8,7 +8,7 @@
 This project is a simple way to show some coding skills and software architecture. All the backend code are 100% tested with unit and integration tests.
 
 ## Software Architecture Decisions
-All the project-related files are inside the `src` directory, where you'll find the four layers where this application is distributed.
+All the project-related files are inside the [`src`](./src) directory, where you'll find the four layers where this application is distributed.
 <p align="center">
 <img src="./docs/img/clean-architecture.jpeg" alt="Clean Architecture" height="250">
 </p>
@@ -24,4 +24,31 @@ I've tried to follow something like the image above, where we have the most inte
 - [Bootstrap](https://getbootstrap.com);
 - [Heroku](https://heroku.com);
 
-## Thanks
+## Running the Application Locally
+Steps:
+1. ```shell
+   git clone git@github.com:fnsc/fnsc-dev.git
+   ```
+1. ```shell
+   docker-compose up web -d
+   ```
+1. ```shell
+   docker-compose exec web composer install
+   ```
+1. ```shell
+   docker-compose run assets npm install
+   ```
+1. ```shell
+   docker-compose run assets npm run dev
+   ```
+1. ```shell
+   cp .env.example ./.env
+   ```
+1. ```shell
+   docker-compose exec web php artisan key:generate
+   ```
+1. ```shell
+   docker-compose exec web php artisan migrate
+   ```
+
+Finally access [http://localhost:8080](http://localhost:8080).
