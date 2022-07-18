@@ -35,6 +35,7 @@ class CreateNewUserFromGitHubData extends Command
     public function handle(): int
     {
         try {
+            $this->info('Adding new user from GitHub...');
             $response = $this->client->get();
             $gitHubUser = json_decode(
                 $response->getBody()->getContents(),
@@ -42,6 +43,7 @@ class CreateNewUserFromGitHubData extends Command
             );
             $input = InputBoundary::getInput($gitHubUser);
             $this->service->handle($input);
+            $this->info('New user created.');
 
             return self::SUCCESS;
         } catch (ClientException $exception) {
@@ -50,11 +52,19 @@ class CreateNewUserFromGitHubData extends Command
                 compact('exception')
             );
 
+            $this->error(
+                'Something went wrong while receiving info from GitHub. ' . $exception->getMessage()
+            );
+
             return self::FAILURE;
         } catch (Exception $exception) {
             $this->logger->notice(
                 'Something unexpected has happened.',
                 compact('exception')
+            );
+
+            $this->error(
+                'Something unexpected has happened. ' . $exception->getMessage()
             );
 
             return self::FAILURE;

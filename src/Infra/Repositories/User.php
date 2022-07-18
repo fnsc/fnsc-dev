@@ -13,7 +13,7 @@ class User implements UserRepository
 {
     public function store(UserEntity $user): UserEntity
     {
-        $userModel = $this->firstOrCreate(new ObjectId($user->getId()));
+        $userModel = $this->firstOrCreate($user->getId());
 
         if (!empty($userModel->getAttribute('id'))) {
             $this->setAttributes($userModel, $user);
@@ -42,7 +42,7 @@ class User implements UserRepository
     private function firstOrCreate(ObjectId $id): UserModel
     {
         /* @phpstan-ignore-next-line */
-        if ($user = UserModel::where('id', (string) $id)->first()) {
+        if ($user = UserModel::where('id', $id)->first()) {
             return $user;
         }
 

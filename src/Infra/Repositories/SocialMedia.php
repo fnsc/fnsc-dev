@@ -20,7 +20,7 @@ class SocialMedia implements SocialMediaRepository
             $socialMediaModel->save();
 
             return $this->getSocialMediaEntity(
-                $this->first($socialMedia->getId())
+                $this->first($socialMediaModel->getAttribute('id'))
             );
         }
 

@@ -34,7 +34,7 @@
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint">
         <exclude-pattern>app/*.php</exclude-pattern>
-        <exclude-pattern>src/Infra/Commands/FetchGitHubInfo.php</exclude-pattern>
+        <exclude-pattern>src/Infra/Commands/*.php</exclude-pattern>
         <exclude-pattern>src/Infra/Models/Eloquent/*.php</exclude-pattern>
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint">
