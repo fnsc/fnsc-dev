@@ -62,6 +62,11 @@ class User extends Authenticatable
         return $this->hasMany(SocialMedia::class);
     }
 
+    public function experiences(): HasMany
+    {
+        return $this->hasMany(Experience::class);
+    }
+
     /**
      * @return UserFactory
      */

@@ -2,7 +2,11 @@
 
 namespace Tests\Feature\Fnsc\Presenters\CLI;
 
+use Exception;
+use Fnsc\Application\User\Store\InputBoundary;
+use Fnsc\Application\User\Store\Service;
 use Fnsc\Infra\Client\GitHub as GitHubClient;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery as m;
@@ -44,10 +48,82 @@ class CreateNewUserFromGitHubDataTest extends TestCase
             );
 
         // Actions
-        $result = $this->artisan('user:fetch-github');
+        /** @phpstan-ignore-next-line */
+        $result = $this->artisan('user:fetch-github')
+            ->expectsOutput('Adding new user from GitHub...')
+            ->expectsOutput('New user created.');
 
         // Assertions
-        /* @phpstan-ignore-next-line */
         $result->assertSuccessful();
+    }
+
+    public function testShouldThrowAnExceptionWhenClientFails(): void
+    {
+        // Set
+        $gitHubClient = $this->instance(
+            GitHubClient::class,
+            m::mock(GitHubClient::class)
+        );
+
+        // Expectations
+        /* @phpstan-ignore-next-line */
+        $gitHubClient->expects()
+            ->get()
+            ->andThrow(m::mock(ClientException::class));
+
+        // Actions
+        /** @phpstan-ignore-next-line */
+        $result = $this->artisan('user:fetch-github')
+            ->expectsOutput('Adding new user from GitHub...');
+
+        // Assertions
+        $result->assertFailed();
+    }
+
+    public function testShouldThrowAnExceptionWhenServiceFails(): void
+    {
+        // Set
+        $gitHubClient = $this->instance(
+            GitHubClient::class,
+            m::mock(GitHubClient::class)
+        );
+        $service = $this->instance(Service::class, m::mock(Service::class));
+        $response = m::mock(ResponseInterface::class);
+        $responseContent = m::mock(StreamInterface::class);
+        $exception = new Exception('Unexpected error happened');
+
+        // Expectations
+        /* @phpstan-ignore-next-line */
+        $gitHubClient->expects()
+            ->get()
+            ->andReturn($response);
+
+        /* @phpstan-ignore-next-line */
+        $response->expects()
+            ->getBody()
+            ->andReturn($responseContent);
+
+        /* @phpstan-ignore-next-line */
+        $responseContent->expects()
+            ->getContents()
+            ->andReturn(
+                '{"avatar_url":"https://avatars.githubusercontent.com/u/23709089?v=4","name":"Gabriel Fonseca","location":"São Paulo, São Paulo, Brazil","email":"gabrieldfnsc@gmail.com","bio":"A developer from Paracatu/MG living in São Paulo"}'
+            );
+
+        /** @phpstan-ignore-next-line */
+        $service->expects()
+            ->handle(m::type(InputBoundary::class))
+            ->andThrow($exception);
+
+        // Actions
+        /** @phpstan-ignore-next-line */
+        $result = $this->artisan('user:fetch-github')
+            ->expectsOutput('Adding new user from GitHub...')
+            ->expectsOutput(
+                'Something unexpected has happened. Unexpected error happened'
+            );
+
+        // Assertions
+        $result->assertFailed();
     }
 }

@@ -2,12 +2,15 @@
 
 namespace Fnsc\Domain\Entities;
 
+use Fnsc\Domain\ObjectIdGenerator;
 use Fnsc\Domain\ValueObjects\Email;
 use Fnsc\Domain\ValueObjects\Url;
 use MongoDB\BSON\ObjectId;
 
 class User
 {
+    use ObjectIdGenerator;
+
     /**
      * @param ObjectId $id
      * @param Email    $email
@@ -34,10 +37,8 @@ class User
         string $email,
         string $id = '',
     ): self {
-        $id = empty($id) ? new ObjectId() : new ObjectId($id);
-
         return new self(
-            id: $id,
+            id: self::getObjectId($id),
             email: new Email($email),
             avatarUrl: new Url($avatarUrl),
             name: $name,

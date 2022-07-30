@@ -2,11 +2,14 @@
 
 namespace Fnsc\Domain\Entities;
 
+use Fnsc\Domain\ObjectIdGenerator;
 use Fnsc\Domain\ValueObjects\Url;
 use MongoDB\BSON\ObjectId;
 
 class SocialMedia
 {
+    use ObjectIdGenerator;
+
     private function __construct(
         private readonly ObjectId $id,
         private readonly Url $profileUrl,
@@ -23,10 +26,8 @@ class SocialMedia
         string $iconPath,
         string $id = '',
     ): self {
-        $id = empty($id) ? new ObjectId() : new ObjectId($id);
-
         return new self(
-            id: $id,
+            id: self::getObjectId($id),
             profileUrl: new Url($profileUrl),
             name: $name,
             username: $username,

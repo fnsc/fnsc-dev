@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use Fnsc\Presenters\CLI\AddNewExperience;
 use Fnsc\Presenters\CLI\CreateNewUserFromGitHubData;
 use Fnsc\Presenters\CLI\FetchGitHubInfo;
 use Illuminate\Console\Scheduling\Schedule;
@@ -13,6 +14,7 @@ class Kernel extends ConsoleKernel
      * @var string[]
      */
     protected $commands = [
+        AddNewExperience::class,
         CreateNewUserFromGitHubData::class,
         FetchGitHubInfo::class,
     ];

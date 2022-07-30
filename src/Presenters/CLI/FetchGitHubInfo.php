@@ -36,6 +36,7 @@ class FetchGitHubInfo extends Command
     public function handle(): int
     {
         try {
+            $this->info('Adding GitHub social media info...');
             $response = $this->client->get();
             $gitHubData = json_decode(
                 $response->getBody()->getContents(),
@@ -48,11 +49,17 @@ class FetchGitHubInfo extends Command
             );
             $this->service->handle($input);
 
+            $this->info('GitHub info added.');
+
             return self::SUCCESS;
         } catch (ClientException $exception) {
             $this->logger->notice(
                 'Something went wrong while receiving info from GitHub.',
                 compact('exception')
+            );
+
+            $this->error(
+                'Something went wrong while receiving info from GitHub. ' . $exception->getMessage()
             );
 
             return self::FAILURE;
@@ -62,11 +69,19 @@ class FetchGitHubInfo extends Command
                 compact('exception')
             );
 
+            $this->error(
+                'Something about the user is not working well. ' . $exception->getMessage()
+            );
+
             return self::FAILURE;
         } catch (Exception $exception) {
             $this->logger->notice(
                 'Something unexpected has happened.',
                 compact('exception')
+            );
+
+            $this->error(
+                'Something unexpected has happened. ' . $exception->getMessage()
             );
 
             return self::FAILURE;
