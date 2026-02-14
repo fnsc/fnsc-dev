@@ -11,7 +11,7 @@
   --color-card-bg: var(--card-bg);
   --color-card-border: var(--card-border);
   --color-nav-bg: var(--nav-bg);
-  --font-sans: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {

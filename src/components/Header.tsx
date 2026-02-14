@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
@@ -16,12 +16,13 @@ const navItems = [
 
 export default function Header() {
   const t = useTranslations("nav");
+  const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-card-border bg-nav-bg backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="#" className="text-lg font-bold text-primary">
+        <a href={`/${locale}`} className="text-lg font-bold text-primary">
           GF
         </a>
 
