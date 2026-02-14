@@ -1,18 +1,15 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import AnimatedSection from "./AnimatedSection";
+import SectionHeading from "./ui/SectionHeading";
 
-export default function About() {
-  const t = useTranslations("about");
+export default async function About() {
+  const t = await getTranslations("about");
 
   return (
     <AnimatedSection id="about" className="px-4 py-20">
       <div className="mx-auto max-w-4xl">
-        <h2 className="mb-8 text-3xl font-bold">
-          <span className="text-primary">#</span> {t("title")}
-        </h2>
-        <p className="text-lg leading-relaxed text-[var(--fg-secondary)]">
+        <SectionHeading className="mb-8">{t("title")}</SectionHeading>
+        <p className="text-lg leading-relaxed text-fg-secondary">
           {t("description")}
         </p>
       </div>

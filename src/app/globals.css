@@ -4,6 +4,13 @@
   --color-primary: #06b6d4;
   --color-primary-dark: #22d3ee;
   --color-accent: #0ea5e9;
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-fg: var(--fg);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-nav-bg: var(--nav-bg);
   --font-sans: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif;
 }
 

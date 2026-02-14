@@ -2,9 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import AnimatedSection from "./AnimatedSection";
-import { techStack } from "@/data/resume";
-
-const categoryKeys = ["backend", "frontend", "frameworks", "databases", "cloud"] as const;
+import SectionHeading from "./ui/SectionHeading";
+import Card from "./ui/Card";
+import { techStack, categoryKeys } from "@/data/resume";
 
 export default function TechStack() {
   const t = useTranslations("techStack");
@@ -12,16 +12,11 @@ export default function TechStack() {
   return (
     <AnimatedSection id="tech-stack" className="px-4 py-20">
       <div className="mx-auto max-w-4xl">
-        <h2 className="mb-12 text-3xl font-bold">
-          <span className="text-primary">#</span> {t("title")}
-        </h2>
+        <SectionHeading>{t("title")}</SectionHeading>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categoryKeys.map((cat) => (
-            <div
-              key={cat}
-              className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6"
-            >
+            <Card key={cat}>
               <h3 className="mb-4 text-lg font-semibold text-primary">
                 {t(cat)}
               </h3>
@@ -29,13 +24,13 @@ export default function TechStack() {
                 {techStack[cat].map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-lg border border-[var(--card-border)] bg-[var(--bg)] px-3 py-1.5 text-sm font-medium"
+                    className="rounded-lg border border-card-border bg-bg px-3 py-1.5 text-sm font-medium"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

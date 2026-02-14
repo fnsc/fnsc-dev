@@ -39,7 +39,7 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors hover:bg-[var(--card-bg)]"
+        className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors hover:bg-card-bg"
         aria-label="Switch language"
       >
         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -48,12 +48,12 @@ export default function LanguageSwitcher() {
         {localeLabels[locale]}
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-1 overflow-hidden rounded-lg border border-[var(--card-border)] bg-[var(--bg)] shadow-lg">
+        <div className="absolute right-0 top-full mt-1 overflow-hidden rounded-lg border border-card-border bg-bg shadow-lg">
           {routing.locales.map((l) => (
             <button
               key={l}
               onClick={() => switchLocale(l)}
-              className={`block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-[var(--card-bg)] ${
+              className={`block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-card-bg ${
                 l === locale ? "text-primary font-semibold" : ""
               }`}
             >

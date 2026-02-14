@@ -1,37 +1,35 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import AnimatedSection from "./AnimatedSection";
+import SectionHeading from "./ui/SectionHeading";
+import Card from "./ui/Card";
 import { certKeys } from "@/data/resume";
 
-export default function Education() {
-  const t = useTranslations("education");
+export default async function Education() {
+  const t = await getTranslations("education");
 
   return (
     <AnimatedSection id="education" className="px-4 py-20">
       <div className="mx-auto max-w-4xl">
-        <h2 className="mb-12 text-3xl font-bold">
-          <span className="text-primary">#</span> {t("title")}
-        </h2>
+        <SectionHeading>{t("title")}</SectionHeading>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6">
+          <Card>
             <h3 className="mb-4 text-lg font-semibold text-primary">
               {t("education")}
             </h3>
             <h4 className="mb-1 text-base font-semibold">
               {t("degree.program")}
             </h4>
-            <p className="mb-1 text-sm text-[var(--fg-secondary)]">
+            <p className="mb-1 text-sm text-fg-secondary">
               {t("degree.field")}
             </p>
             <p className="mb-2 text-sm font-medium">
               {t("degree.institution")}
             </p>
             <p className="text-xs text-primary">{t("degree.period")}</p>
-          </div>
+          </Card>
 
-          <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6">
+          <Card>
             <h3 className="mb-4 text-lg font-semibold text-primary">
               {t("certificates")}
             </h3>
@@ -55,7 +53,7 @@ export default function Education() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Card>
         </div>
       </div>
     </AnimatedSection>

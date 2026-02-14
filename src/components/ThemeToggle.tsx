@@ -19,7 +19,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="rounded-lg p-2 transition-colors hover:bg-[var(--card-bg)]"
+      className="rounded-lg p-2 transition-colors hover:bg-card-bg"
       aria-label="Toggle theme"
     >
       {dark ? (
