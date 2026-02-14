@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "description": "Gabriel Fonseca — Engenheiro de Software com mais de 8 anos de experiência construindo sistemas backend escaláveis e APIs em PHP, Go e Node.js. Baseado no Canadá."
+  },
   "nav": {
     "about": "Sobre",
     "experience": "Experiência",
