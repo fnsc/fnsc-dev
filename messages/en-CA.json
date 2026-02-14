@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "techStack": "Tech Stack",
+    "openSource": "Open Source",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Gabriel Fonseca",
+    "title": "Software Engineer",
+    "subtitle": "Building scalable, secure solutions since 2016",
+    "viewResume": "View Resume",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About",
+    "description": "Software engineer with experience in backend and frontend development, specializing in crafting scalable, secure frameworks since 2016. Skilled in PHP, NodeJS, Go. I excel in collaborative environments, driving projects from concept to deployment, and am committed to continuous learning and delivering impactful solutions."
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "technologies": "Technologies",
+    "jobs": {
+      "loopio": {
+        "role": "Software Engineer",
+        "company": "Loopio",
+        "period": "Oct 2024 – Present",
+        "description": "Developing new features and implementing enhancements tailored to enterprise clients, ensuring scalability, reliability, and performance. Collaborating cross-functionally to deliver solutions that address complex business requirements and improve customer satisfaction. Contributing to maintaining and optimizing backend systems to support enterprise-level use cases.",
+        "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
+      },
+      "netcoins": {
+        "role": "Software Engineer",
+        "company": "Netcoins",
+        "period": "Jan 2023 – Oct 2024",
+        "description": "Key contributions include developing and refining features such as Staking and KYC, refactoring legacy code, and collaborating with the Product Manager on requirements and user stories. Led the adoption of automated testing, which notably reduced QA issues and fostered a testing culture.",
+        "tech": "Laravel, PHP 8, TypeScript, VueJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
+      },
+      "m56": {
+        "role": "Software Engineer",
+        "company": "M56 Studios",
+        "period": "Aug 2022 – Dec 2022",
+        "description": "Developed and maintained features for Fit52, including creating REST API endpoints with PHP 8.1, Laravel 9, Redis, and MySQL, and managed integrations with Shopify, Stripe, Segment, and RevenueCat.",
+        "tech": "Laravel, MySQL, API Integrations"
+      },
+      "leroy": {
+        "role": "Backend Developer",
+        "company": "Leroy Merlin Brasil",
+        "period": "Sep 2020 – Aug 2022",
+        "description": "Developed integrations with external services like Google Merchant Center, Facebook Business, and BigQuery using PHP and Laravel. Utilized our open-source library, Metamorphosis, for Apache Kafka interactions. GoLang was employed for efficient data transmission. Also constructed REST APIs for the e-commerce platform with thorough test coverage and improved platform observability using tools like Grafana, Datadog, and Confluent Conduktor.",
+        "tech": "Laravel, MongoDB, Elasticsearch, Kafka, PHPUnit, TDD, Open Source, Mentorship, DataDog, Grafana, Docker, Redis, Code Review, GitHub Actions, Jenkins, Go, AWS"
+      },
+      "masp": {
+        "role": "Fullstack Developer",
+        "company": "Museu de Arte de São Paulo – MASP",
+        "period": "Jun 2019 – Sep 2020",
+        "description": "Developed administrative tools to boost productivity and process control, and enhanced the museum visitor experience with interactive kiosks, using PHP, Laravel, NodeJS, VueJs, ReactJs, and Bootstrap, deployed on Azure.",
+        "tech": "Laravel, PostgreSQL, Azure, VueJS, React, NodeJS, Web Sockets, API Integrations"
+      },
+      "dvm": {
+        "role": "Web Developer",
+        "company": "Digital Video Music",
+        "period": "Jun 2016 – Jun 2019",
+        "description": "Developed static and dynamic websites using jQuery, JavaScript, CSS, Bootstrap, HTML, PHP 5.6, 7.*, NodeJs and MySQL.",
+        "tech": "PHP 5.6/7, MySQL, jQuery, JavaScript, CSS, HTML"
+      }
+    }
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "frameworks": "Frameworks",
+    "databases": "Databases",
+    "cloud": "Cloud Computing"
+  },
+  "openSource": {
+    "title": "Open Source",
+    "owner": "Owner",
+    "contributor": "Contributor",
+    "projects": {
+      "laravelGoogleDrive": {
+        "name": "Laravel Google Drive",
+        "role": "owner"
+      },
+      "cpfCnpj": {
+        "name": "CPF CNPJ Validation Rules",
+        "role": "owner"
+      },
+      "metamorphosis": {
+        "name": "Metamorphosis",
+        "role": "contributor"
+      },
+      "mongolid": {
+        "name": "MongoLid",
+        "role": "contributor"
+      }
+    }
+  },
+  "education": {
+    "title": "Education & Certificates",
+    "education": "Education",
+    "certificates": "Certificates",
+    "degree": {
+      "institution": "Instituto Federal de Educação, Ciência e Tecnologia do Triângulo Mineiro",
+      "program": "Systems Analysis and Development",
+      "field": "Information Technology",
+      "period": "Feb 2015 – Feb 2018"
+    },
+    "certs": {
+      "cspo": "Certified Scrum Product Owner (CSPO)",
+      "kanban": "KanBan Foundation (KIKF)",
+      "devops": "DevOps Essentials Professional Certificate (DEPC)",
+      "wes": "Verified International Academic Qualifications (WES)"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Feel free to reach out for opportunities, collaborations, or just a friendly chat.",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "sendEmail": "Send an Email"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js & Tailwind CSS",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  }
+}

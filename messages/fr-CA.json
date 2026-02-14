@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "techStack": "Technologies",
+    "openSource": "Open Source",
+    "education": "Formation",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Gabriel Fonseca",
+    "title": "Ingénieur logiciel",
+    "subtitle": "Création de solutions évolutives et sécurisées depuis 2016",
+    "viewResume": "Voir le CV",
+    "contactMe": "Me contacter"
+  },
+  "about": {
+    "title": "À propos",
+    "description": "Ingénieur logiciel avec de l'expérience en développement backend et frontend, spécialisé dans la conception de frameworks évolutifs et sécurisés depuis 2016. Compétent en PHP, NodeJS, Go. J'excelle dans les environnements collaboratifs, en menant les projets du concept au déploiement, et je suis engagé dans l'apprentissage continu et la livraison de solutions percutantes."
+  },
+  "experience": {
+    "title": "Expérience",
+    "present": "Présent",
+    "technologies": "Technologies",
+    "jobs": {
+      "loopio": {
+        "role": "Ingénieur logiciel",
+        "company": "Loopio",
+        "period": "Oct 2024 – Présent",
+        "description": "Développement de nouvelles fonctionnalités et mise en œuvre d'améliorations adaptées aux clients entreprise, en assurant l'évolutivité, la fiabilité et la performance. Collaboration interfonctionnelle pour livrer des solutions qui répondent aux exigences commerciales complexes et améliorent la satisfaction client.",
+        "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
+      },
+      "netcoins": {
+        "role": "Ingénieur logiciel",
+        "company": "Netcoins",
+        "period": "Jan 2023 – Oct 2024",
+        "description": "Contributions clés incluant le développement et le raffinement de fonctionnalités telles que le Staking et le KYC, le refactoring de code legacy, et la collaboration avec le Product Manager sur les exigences et les user stories. Direction de l'adoption des tests automatisés, ce qui a réduit les problèmes de QA et favorisé une culture de tests.",
+        "tech": "Laravel, PHP 8, TypeScript, VueJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
+      },
+      "m56": {
+        "role": "Ingénieur logiciel",
+        "company": "M56 Studios",
+        "period": "Août 2022 – Déc 2022",
+        "description": "Développement et maintenance de fonctionnalités pour Fit52, incluant la création d'endpoints API REST avec PHP 8.1, Laravel 9, Redis et MySQL, et la gestion des intégrations avec Shopify, Stripe, Segment et RevenueCat.",
+        "tech": "Laravel, MySQL, Intégrations API"
+      },
+      "leroy": {
+        "role": "Développeur Backend",
+        "company": "Leroy Merlin Brasil",
+        "period": "Sep 2020 – Août 2022",
+        "description": "Développement d'intégrations avec des services externes comme Google Merchant Center, Facebook Business et BigQuery en utilisant PHP et Laravel. Utilisation de notre bibliothèque open-source Metamorphosis pour les interactions Apache Kafka. GoLang utilisé pour la transmission efficace de données. Construction d'APIs REST pour la plateforme e-commerce avec une couverture de tests complète et amélioration de l'observabilité avec Grafana, Datadog et Confluent Conduktor.",
+        "tech": "Laravel, MongoDB, Elasticsearch, Kafka, PHPUnit, TDD, Open Source, Mentorat, DataDog, Grafana, Docker, Redis, Code Review, GitHub Actions, Jenkins, Go, AWS"
+      },
+      "masp": {
+        "role": "Développeur Fullstack",
+        "company": "Museu de Arte de São Paulo – MASP",
+        "period": "Jun 2019 – Sep 2020",
+        "description": "Développement d'outils administratifs pour améliorer la productivité et le contrôle des processus, et amélioration de l'expérience des visiteurs du musée avec des kiosques interactifs, utilisant PHP, Laravel, NodeJS, VueJs, ReactJs et Bootstrap, déployés sur Azure.",
+        "tech": "Laravel, PostgreSQL, Azure, VueJS, React, NodeJS, Web Sockets, Intégrations API"
+      },
+      "dvm": {
+        "role": "Développeur Web",
+        "company": "Digital Video Music",
+        "period": "Jun 2016 – Jun 2019",
+        "description": "Développement de sites web statiques et dynamiques en utilisant jQuery, JavaScript, CSS, Bootstrap, HTML, PHP 5.6, 7.*, NodeJs et MySQL.",
+        "tech": "PHP 5.6/7, MySQL, jQuery, JavaScript, CSS, HTML"
+      }
+    }
+  },
+  "techStack": {
+    "title": "Technologies",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "frameworks": "Frameworks",
+    "databases": "Bases de données",
+    "cloud": "Infonuagique"
+  },
+  "openSource": {
+    "title": "Open Source",
+    "owner": "Propriétaire",
+    "contributor": "Contributeur",
+    "projects": {
+      "laravelGoogleDrive": {
+        "name": "Laravel Google Drive",
+        "role": "owner"
+      },
+      "cpfCnpj": {
+        "name": "CPF CNPJ Validation Rules",
+        "role": "owner"
+      },
+      "metamorphosis": {
+        "name": "Metamorphosis",
+        "role": "contributor"
+      },
+      "mongolid": {
+        "name": "MongoLid",
+        "role": "contributor"
+      }
+    }
+  },
+  "education": {
+    "title": "Formation & Certificats",
+    "education": "Formation",
+    "certificates": "Certificats",
+    "degree": {
+      "institution": "Instituto Federal de Educação, Ciência e Tecnologia do Triângulo Mineiro",
+      "program": "Analyse et développement de systèmes",
+      "field": "Technologies de l'information",
+      "period": "Fév 2015 – Fév 2018"
+    },
+    "certs": {
+      "cspo": "Certified Scrum Product Owner (CSPO)",
+      "kanban": "KanBan Foundation (KIKF)",
+      "devops": "DevOps Essentials Professional Certificate (DEPC)",
+      "wes": "Verified International Academic Qualifications (WES)"
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "N'hésitez pas à me contacter pour des opportunités, des collaborations ou simplement pour discuter.",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "sendEmail": "Envoyer un courriel"
+  },
+  "footer": {
+    "builtWith": "Créé avec Next.js & Tailwind CSS",
+    "rights": "Tous droits réservés."
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre"
+  }
+}

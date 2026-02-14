@@ -1,0 +1,4 @@
+fnsc.test {
+	reverse_proxy app:3000
+	tls internal
+}
