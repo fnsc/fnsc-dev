@@ -2,8 +2,8 @@ export const contactInfo = {
   email: "gabrieldfnsc@gmail.com",
   phone: "+1 (604) 417-4066",
   address: "823 Carnarvon Street",
-  github: "https://github.com/gabrielfs7",
-  linkedin: "https://www.linkedin.com/in/gabriel-fonseca-5a498054/",
+  github: "https://github.com/fnsc",
+  linkedin: "https://www.linkedin.com/in/fnsc/",
 };
 
 export const jobKeys = [

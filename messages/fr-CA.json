@@ -17,7 +17,7 @@
   },
   "about": {
     "title": "À propos",
-    "description": "Ingénieur logiciel avec de l'expérience en développement backend et frontend, spécialisé dans la conception de frameworks évolutifs et sécurisés depuis 2016. Compétent en PHP, NodeJS, Go. J'excelle dans les environnements collaboratifs, en menant les projets du concept au déploiement, et je suis engagé dans l'apprentissage continu et la livraison de solutions percutantes."
+    "description": "Ingénieur logiciel avec près d'une décennie d'expérience dans la conception de systèmes backend évolutifs et d'APIs pour des secteurs tels que la fintech, le commerce électronique et le SaaS entreprise. Compétent en PHP, Node.js et Go, avec une expérience pratique en frontend avec React et Vue. Passionné par la qualité du code — j'ai promu l'adoption de tests automatisés, contribué à des projets open source et accompagné d'autres développeurs. Je m'épanouis au sein d'équipes interfonctionnelles, en transformant des exigences métier complexes en logiciels fiables et bien testés."
   },
   "experience": {
     "title": "Expérience",
@@ -28,42 +28,42 @@
         "role": "Ingénieur logiciel",
         "company": "Loopio",
         "period": "Oct 2024 – Présent",
-        "description": "Développement de nouvelles fonctionnalités et mise en œuvre d'améliorations adaptées aux clients entreprise, en assurant l'évolutivité, la fiabilité et la performance. Collaboration interfonctionnelle pour livrer des solutions qui répondent aux exigences commerciales complexes et améliorent la satisfaction client.",
+        "description": "Développement et livraison de fonctionnalités pour clients entreprise sur une plateforme SaaS B2B. Travail sur l'ensemble de la stack — backend avec Symfony et PHP, frontend avec React et TypeScript. Focus sur la performance, la couverture de tests et la collaboration étroite avec produit et QA.",
         "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "netcoins": {
         "role": "Ingénieur logiciel",
         "company": "Netcoins",
         "period": "Jan 2023 – Oct 2024",
-        "description": "Contributions clés incluant le développement et le raffinement de fonctionnalités telles que le Staking et le KYC, le refactoring de code legacy, et la collaboration avec le Product Manager sur les exigences et les user stories. Direction de l'adoption des tests automatisés, ce qui a réduit les problèmes de QA et favorisé une culture de tests.",
+        "description": "Conception et livraison de fonctionnalités fintech critiques incluant le Staking et les flux KYC, impactant directement les revenus et la conformité réglementaire. Direction de l'adoption des tests automatisés au sein de l'équipe, réduisant significativement les bugs en production et instaurant une culture axée sur la qualité. Refactoring de bases de code legacy pour améliorer la maintenabilité et la vélocité de développement.",
         "tech": "Laravel, PHP 8, TypeScript, VueJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "m56": {
         "role": "Ingénieur logiciel",
         "company": "M56 Studios",
         "period": "Août 2022 – Déc 2022",
-        "description": "Développement et maintenance de fonctionnalités pour Fit52, incluant la création d'endpoints API REST avec PHP 8.1, Laravel 9, Redis et MySQL, et la gestion des intégrations avec Shopify, Stripe, Segment et RevenueCat.",
+        "description": "Conception et développement d'endpoints API REST alimentant la plateforme fitness Fit52. Responsable de bout en bout de l'intégration avec des services tiers incluant Shopify, Stripe, Segment et RevenueCat, permettant le traitement des paiements et la gestion des abonnements.",
         "tech": "Laravel, MySQL, Intégrations API"
       },
       "leroy": {
         "role": "Développeur Backend",
         "company": "Leroy Merlin Brasil",
         "period": "Sep 2020 – Août 2022",
-        "description": "Développement d'intégrations avec des services externes comme Google Merchant Center, Facebook Business et BigQuery en utilisant PHP et Laravel. Utilisation de notre bibliothèque open-source Metamorphosis pour les interactions Apache Kafka. GoLang utilisé pour la transmission efficace de données. Construction d'APIs REST pour la plateforme e-commerce avec une couverture de tests complète et amélioration de l'observabilité avec Grafana, Datadog et Confluent Conduktor.",
+        "description": "Mise à l'échelle du catalogue Google Merchant Center de 200K à 800K produits en construisant des pipelines de données haute performance avec Go et Apache Kafka. Développement d'intégrations avec Facebook Business et BigQuery pour le marketing et l'analytique. Construction et maintenance d'APIs REST pour une plateforme e-commerce à grande échelle avec une couverture de tests complète. Amélioration de l'observabilité en implémentant le monitoring avec Grafana, Datadog et Confluent Conduktor. Mentorat de développeurs juniors et contribution à la bibliothèque open source Metamorphosis.",
         "tech": "Laravel, MongoDB, Elasticsearch, Kafka, PHPUnit, TDD, Open Source, Mentorat, DataDog, Grafana, Docker, Redis, Code Review, GitHub Actions, Jenkins, Go, AWS"
       },
       "masp": {
         "role": "Développeur Fullstack",
         "company": "Museu de Arte de São Paulo – MASP",
         "period": "Jun 2019 – Sep 2020",
-        "description": "Développement d'outils administratifs pour améliorer la productivité et le contrôle des processus, et amélioration de l'expérience des visiteurs du musée avec des kiosques interactifs, utilisant PHP, Laravel, NodeJS, VueJs, ReactJs et Bootstrap, déployés sur Azure.",
+        "description": "Création d'outils internes ayant rationalisé les flux administratifs et amélioré l'efficacité opérationnelle de l'un des musées d'art les plus renommés d'Amérique latine. Conception et développement de kiosques interactifs pour visiteurs utilisant des Web Sockets en temps réel, enrichissant l'expérience muséale. Livraison de solutions fullstack multi-frameworks déployées sur Azure.",
         "tech": "Laravel, PostgreSQL, Azure, VueJS, React, NodeJS, Web Sockets, Intégrations API"
       },
       "dvm": {
         "role": "Développeur Web",
         "company": "Digital Video Music",
         "period": "Jun 2016 – Jun 2019",
-        "description": "Développement de sites web statiques et dynamiques en utilisant jQuery, JavaScript, CSS, Bootstrap, HTML, PHP 5.6, 7.*, NodeJs et MySQL.",
+        "description": "Conception et livraison de solutions web pour des clients de divers secteurs, évoluant des sites statiques aux applications dynamiques complètes. Progression technique de junior à intermédiaire, acquérant des bases solides en PHP, JavaScript et bases de données relationnelles.",
         "tech": "PHP 5.6/7, MySQL, jQuery, JavaScript, CSS, HTML"
       }
     }
