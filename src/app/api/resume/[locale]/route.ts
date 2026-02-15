@@ -25,7 +25,7 @@ export async function GET(
   return new Response(new Uint8Array(buffer), {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="gabriel-fonseca-resume-${locale}.pdf"`,
+      "Content-Disposition": `attachment; filename="gabriel-fonseca_${new Date().toISOString().replace("T", "_").replace(/\.\d{3}Z$/, "")}.pdf"`,
       "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=3600",
     },
   });
