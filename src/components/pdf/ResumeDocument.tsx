@@ -112,7 +112,12 @@ const styles = StyleSheet.create({
 
 export default function ResumeDocument({ data }: { data: PdfResumeData }) {
   return (
-    <Document>
+    <Document
+      title={`${data.name} — ${data.title}`}
+      author={data.name}
+      subject={`Resume / CV — ${data.title}`}
+      keywords="Software Engineer, PHP, Laravel, Symfony, Node.js, Go, TypeScript, React, Vue, AWS, Docker, PostgreSQL, MySQL, MongoDB, REST API, TDD, Agile"
+    >
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
@@ -131,6 +136,10 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
             <Text style={styles.contactItem}>|</Text>
             <Link src={data.contact.linkedin} style={styles.link}>
               <Text style={styles.contactItem}>linkedin.com/in/fnsc</Text>
+            </Link>
+            <Text style={styles.contactItem}>|</Text>
+            <Link src={data.contact.website} style={styles.link}>
+              <Text style={styles.contactItem}>fnsc.dev</Text>
             </Link>
           </View>
         </View>
@@ -151,7 +160,11 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
                 <Text style={styles.jobPeriod}>{job.period}</Text>
               </View>
               <Text style={styles.jobCompany}>{job.company}</Text>
-              <Text style={styles.jobDescription}>{job.description}</Text>
+              {job.description.split("\n").map((line, j) => (
+                <Text key={j} style={styles.jobDescription}>
+                  • {line}
+                </Text>
+              ))}
               <Text style={styles.jobTech}>
                 {data.labels.technologies}: {job.tech}
               </Text>
@@ -200,7 +213,7 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
               <Text>
                 <Text style={styles.osName}>{project.name}</Text>
                 <Text style={styles.osRole}> ({project.role})</Text>
-                <Text> — </Text>
+                <Text> — {project.description} — </Text>
                 <Link src={project.url} style={styles.link}>
                   <Text>{project.url}</Text>
                 </Link>
