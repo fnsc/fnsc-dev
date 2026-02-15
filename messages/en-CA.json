@@ -8,7 +8,8 @@
     "techStack": "Tech Stack",
     "openSource": "Open Source",
     "education": "Education",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog": "Blog"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -144,5 +145,10 @@
   "theme": {
     "light": "Light",
     "dark": "Dark"
+  },
+  "blog": {
+    "title": "Blog",
+    "backToBlog": "Back to blog",
+    "readMore": "Read more"
   }
 }

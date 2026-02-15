@@ -14,6 +14,8 @@ const navItems = [
   { key: "contact", href: "#contact" },
 ] as const;
 
+const blogNavItem = { key: "blog" } as const;
+
 export default function Header() {
   const t = useTranslations("nav");
   const locale = useLocale();
@@ -36,6 +38,12 @@ export default function Header() {
               {t(key)}
             </a>
           ))}
+          <a
+            href={`/${locale}/blog`}
+            className="text-sm font-medium text-fg-secondary transition-colors hover:text-primary"
+          >
+            {t(blogNavItem.key)}
+          </a>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -69,6 +77,13 @@ export default function Header() {
               {t(key)}
             </a>
           ))}
+          <a
+            href={`/${locale}/blog`}
+            onClick={() => setMobileOpen(false)}
+            className="block py-2 text-sm font-medium text-fg-secondary transition-colors hover:text-primary"
+          >
+            {t(blogNavItem.key)}
+          </a>
         </nav>
       )}
     </header>
