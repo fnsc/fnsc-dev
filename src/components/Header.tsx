@@ -1,9 +1,11 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const navItems = [
   { key: "about", href: "#about" },
@@ -19,6 +21,8 @@ const blogNavItem = { key: "blog" } as const;
 export default function Header() {
   const t = useTranslations("nav");
   const locale = useLocale();
+  const pathname = usePathname();
+  const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -32,7 +36,7 @@ export default function Header() {
           {navItems.map(({ key, href }) => (
             <a
               key={key}
-              href={href}
+              href={isHome ? href : `/${locale}/${href}`}
               className="text-sm font-medium text-fg-secondary transition-colors hover:text-primary"
             >
               {t(key)}
@@ -65,27 +69,43 @@ export default function Header() {
         </div>
       </div>
 
-      {mobileOpen && (
-        <nav className="border-t border-card-border bg-bg px-4 py-4 md:hidden">
-          {navItems.map(({ key, href }) => (
-            <a
-              key={key}
-              href={href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-2 text-sm font-medium text-fg-secondary transition-colors hover:text-primary"
-            >
-              {t(key)}
-            </a>
-          ))}
-          <a
-            href={`/${locale}/blog`}
-            onClick={() => setMobileOpen(false)}
-            className="block py-2 text-sm font-medium text-fg-secondary transition-colors hover:text-primary"
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="overflow-hidden border-t border-card-border bg-bg md:hidden"
           >
-            {t(blogNavItem.key)}
-          </a>
-        </nav>
-      )}
+            <div className="px-4 py-4">
+              {navItems.map(({ key, href }, i) => (
+                <motion.a
+                  key={key}
+                  href={isHome ? href : `/${locale}/${href}`}
+                  onClick={() => setMobileOpen(false)}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.03 }}
+                  className="block py-2 text-sm font-medium text-fg-secondary transition-colors hover:text-primary"
+                >
+                  {t(key)}
+                </motion.a>
+              ))}
+              <motion.a
+                href={`/${locale}/blog`}
+                onClick={() => setMobileOpen(false)}
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: navItems.length * 0.03 }}
+                className="block py-2 text-sm font-medium text-fg-secondary transition-colors hover:text-primary"
+              >
+                {t(blogNavItem.key)}
+              </motion.a>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
