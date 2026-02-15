@@ -48,8 +48,8 @@ export const openSourceKeys: readonly OpenSourceKey[] = [
 ];
 
 export const openSourceLinks: Record<OpenSourceKey, string> = {
-  laravelGoogleDrive: "https://github.com/gabrielfs7/laravel-google-drive",
-  cpfCnpj: "https://github.com/gabrielfs7/cpf-cnpj-validation",
+  laravelGoogleDrive: "https://github.com/fnsc/laravel-google-drive",
+  cpfCnpj: "https://github.com/fnsc/cpf-cnpj-validation",
   metamorphosis: "https://github.com/leroy-merlin-br/metamorphosis",
   mongolid: "https://github.com/leroy-merlin-br/mongolid",
 };
