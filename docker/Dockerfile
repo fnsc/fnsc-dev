@@ -1,4 +1,4 @@
-FROM node:current-alpine AS base
+FROM node:25-bullseye-slim AS base
 
 # Dependencies
 FROM base AS deps
