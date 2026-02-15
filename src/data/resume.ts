@@ -10,9 +10,11 @@ import type {
 export const contactInfo: ContactInfo = {
   email: "gabrieldfnsc@gmail.com",
   phone: "+1 (604) 417-4066",
-  address: "823 Carnarvon Street",
+  address: "823 Carnarvon Street, New Westminster, BC",
+  location: "New Westminster, BC",
   github: "https://github.com/fnsc",
   linkedin: "https://www.linkedin.com/in/fnsc/",
+  website: "https://fnsc.dev",
 };
 
 export const jobKeys: readonly JobKey[] = [
@@ -27,7 +29,8 @@ export const jobKeys: readonly JobKey[] = [
 export const techStack: TechStack = {
   backend: ["PHP", "NodeJS", "Go", "TypeScript"],
   frontend: ["HTML5", "CSS", "JavaScript", "TypeScript"],
-  frameworks: ["Laravel", "Symfony", "PHPUnit", "ExpressJs", "VueJs", "ReactJs"],
+  frameworks: ["Laravel", "Symfony", "ExpressJs", "VueJs", "ReactJs"],
+  testing: ["PHPUnit", "TDD", "Docker", "GitHub Actions", "Jenkins"],
   databases: ["MySQL", "PostgreSQL", "MongoDB"],
   cloud: ["AWS", "GCP", "Azure"],
 };
@@ -36,6 +39,7 @@ export const categoryKeys: readonly TechCategory[] = [
   "backend",
   "frontend",
   "frameworks",
+  "testing",
   "databases",
   "cloud",
 ];

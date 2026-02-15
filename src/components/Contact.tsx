@@ -48,7 +48,7 @@ export default async function Contact() {
             <p className="mb-1 text-xs font-medium uppercase tracking-wider text-fg-secondary">
               {t("address")}
             </p>
-            <p className="text-sm font-medium">{contactInfo.address}</p>
+            <p className="text-sm font-medium">{contactInfo.location}</p>
           </Card>
         </div>
 

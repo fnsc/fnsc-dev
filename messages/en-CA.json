@@ -22,6 +22,11 @@
     "title": "About",
     "description": "Software engineer with nearly a decade of experience building scalable backend systems and APIs across industries such as fintech, e-commerce, and enterprise SaaS. Proficient in PHP, Node.js, and Go, with hands-on frontend experience using React and Vue. Passionate about code quality — I have championed automated testing practices, contributed to open-source projects, and mentored fellow developers. I thrive in cross-functional teams, turning complex business requirements into reliable, well-tested software."
   },
+  "pdf": {
+    "summary": "Summary",
+    "skills": "Technical Skills",
+    "testing": "Testing & Tools"
+  },
   "experience": {
     "title": "Experience",
     "present": "Present",
@@ -31,42 +36,42 @@
         "role": "Software Engineer",
         "company": "Loopio",
         "period": "Oct 2024 – Present",
-        "description": "Building and shipping features for enterprise clients on a B2B SaaS platform. Working across the stack — backend with Symfony and PHP, frontend with React and TypeScript. Focused on performance, test coverage, and collaborating closely with product and QA.",
+        "description": "Build and ship features for enterprise clients on a B2B SaaS platform\nWork across the full stack — backend with Symfony and PHP, frontend with React and TypeScript\nDrive performance improvements and increase test coverage in collaboration with product and QA",
         "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "netcoins": {
         "role": "Software Engineer",
         "company": "Netcoins",
         "period": "Jan 2023 – Oct 2024",
-        "description": "Built and shipped critical fintech features including Staking and KYC flows, directly impacting revenue and regulatory compliance. Spearheaded the adoption of automated testing across the engineering team, significantly reducing production bugs and establishing a quality-first culture. Refactored legacy codebases to improve maintainability and developer velocity.",
+        "description": "Built and shipped Staking and KYC flows, directly impacting revenue and regulatory compliance\nSpearheaded adoption of automated testing across the engineering team, reducing production bugs and establishing a quality-first culture\nRefactored legacy codebases, improving maintainability and developer velocity",
         "tech": "Laravel, PHP 8, TypeScript, VueJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "m56": {
         "role": "Software Engineer",
         "company": "M56 Studios",
         "period": "Aug 2022 – Dec 2022",
-        "description": "Designed and built REST API endpoints powering the Fit52 fitness platform. Owned end-to-end integration with third-party services including Shopify, Stripe, Segment, and RevenueCat, enabling seamless payment processing and subscription management.",
+        "description": "Designed and built REST API endpoints powering the Fit52 fitness platform\nOwned end-to-end integration with Shopify, Stripe, Segment, and RevenueCat for payment processing and subscription management",
         "tech": "Laravel, MySQL, API Integrations"
       },
       "leroy": {
         "role": "Backend Developer",
         "company": "Leroy Merlin Brasil",
         "period": "Sep 2020 – Aug 2022",
-        "description": "Scaled the Google Merchant Center product catalog from 200K to 800K products by building high-throughput data pipelines with Go and Apache Kafka. Developed integrations with Facebook Business and BigQuery to power marketing and analytics. Built and maintained REST APIs for a large-scale e-commerce platform with comprehensive test coverage. Improved platform observability by implementing monitoring with Grafana, Datadog, and Confluent Conduktor. Mentored junior developers and contributed to the team's open-source library, Metamorphosis.",
+        "description": "Scaled Google Merchant Center product catalog from 200K to 800K products by building high-throughput data pipelines with Go and Apache Kafka\nDeveloped integrations with Facebook Business and BigQuery to power marketing and analytics\nBuilt and maintained REST APIs for a large-scale e-commerce platform with comprehensive test coverage\nImproved platform observability by implementing monitoring with Grafana, Datadog, and Confluent Conduktor\nMentored junior developers and contributed to the team's open-source library, Metamorphosis",
         "tech": "Laravel, MongoDB, Elasticsearch, Kafka, PHPUnit, TDD, Open Source, Mentorship, DataDog, Grafana, Docker, Redis, Code Review, GitHub Actions, Jenkins, Go, AWS"
       },
       "masp": {
         "role": "Fullstack Developer",
         "company": "Museu de Arte de São Paulo – MASP",
         "period": "Jun 2019 – Sep 2020",
-        "description": "Built internal tools that streamlined administrative workflows and improved operational efficiency for one of Latin America's most prominent art museums. Designed and developed interactive visitor kiosks using real-time Web Sockets, enhancing the on-site museum experience. Delivered fullstack solutions across multiple frameworks deployed on Azure.",
+        "description": "Built internal tools that streamlined administrative workflows for one of Latin America's most prominent art museums\nDesigned and developed interactive visitor kiosks using real-time Web Sockets, enhancing the on-site experience\nDelivered fullstack solutions across multiple frameworks deployed on Azure",
         "tech": "Laravel, PostgreSQL, Azure, VueJS, React, NodeJS, Web Sockets, API Integrations"
       },
       "dvm": {
         "role": "Web Developer",
         "company": "Digital Video Music",
         "period": "Jun 2016 – Jun 2019",
-        "description": "Built and delivered web solutions for clients across multiple industries, progressing from static sites to full dynamic applications. Grew technical skills from junior to mid-level, gaining solid foundations in PHP, JavaScript, and relational databases.",
+        "description": "Built and delivered web solutions for clients across multiple industries, progressing from static sites to full dynamic applications\nGrew from junior to mid-level, building solid foundations in PHP, JavaScript, and relational databases",
         "tech": "PHP 5.6/7, MySQL, jQuery, JavaScript, CSS, HTML"
       }
     }
@@ -76,6 +81,7 @@
     "backend": "Backend",
     "frontend": "Frontend",
     "frameworks": "Frameworks",
+    "testing": "Testing & Tools",
     "databases": "Databases",
     "cloud": "Cloud Computing"
   },
@@ -86,19 +92,23 @@
     "projects": {
       "laravelGoogleDrive": {
         "name": "Laravel Google Drive",
-        "role": "owner"
+        "role": "owner",
+        "description": "Laravel filesystem driver for Google Drive API integration"
       },
       "cpfCnpj": {
         "name": "CPF CNPJ Validation Rules",
-        "role": "owner"
+        "role": "owner",
+        "description": "Laravel validation rules for Brazilian CPF and CNPJ documents"
       },
       "metamorphosis": {
         "name": "Metamorphosis",
-        "role": "contributor"
+        "role": "contributor",
+        "description": "Laravel package for event-driven architecture with Apache Kafka"
       },
       "mongolid": {
         "name": "MongoLid",
-        "role": "contributor"
+        "role": "contributor",
+        "description": "MongoDB ODM for Laravel with ActiveRecord-style models"
       }
     }
   },

@@ -30,9 +30,13 @@ export default function Experience() {
                 <p className="mb-3 font-medium text-primary">
                   {t(`jobs.${key}.company`)}
                 </p>
-                <p className="mb-4 text-sm leading-relaxed text-fg-secondary">
-                  {t(`jobs.${key}.description`)}
-                </p>
+                <ul className="mb-4 list-disc space-y-1 pl-5 text-sm leading-relaxed text-fg-secondary">
+                  {t(`jobs.${key}.description`)
+                    .split("\n")
+                    .map((line: string, i: number) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                </ul>
                 <div className="flex flex-wrap gap-2">
                   {parseTechString(t(`jobs.${key}.tech`)).map((tech) => (
                     <span

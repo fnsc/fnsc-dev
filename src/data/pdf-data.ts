@@ -29,7 +29,7 @@ export async function buildPdfResumeData(
 
   const categoryLabels: Record<string, string> = {};
   for (const cat of categoryKeys) {
-    categoryLabels[cat] = messages.techStack[cat];
+    categoryLabels[cat] = messages.pdf[cat] ?? messages.techStack[cat];
   }
 
   const certifications = certKeys.map((key) => messages.education.certs[key]);
@@ -37,6 +37,7 @@ export async function buildPdfResumeData(
   const openSource = openSourceKeys.map((key) => ({
     name: messages.openSource.projects[key].name,
     role: messages.openSource.projects[key].role,
+    description: messages.openSource.projects[key].description,
     url: openSourceLinks[key],
   }));
 
@@ -59,9 +60,9 @@ export async function buildPdfResumeData(
     certifications,
     openSource,
     labels: {
-      summary: messages.about.title,
+      summary: messages.pdf.summary,
       experience: messages.experience.title,
-      skills: messages.techStack.title,
+      skills: messages.pdf.skills,
       education: messages.education.education,
       certificates: messages.education.certificates,
       openSource: messages.openSource.title,

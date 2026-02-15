@@ -11,6 +11,7 @@ export interface PdfJob {
 export interface PdfOpenSource {
   name: string;
   role: string;
+  description: string;
   url: string;
 }
 
