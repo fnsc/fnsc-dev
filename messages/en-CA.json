@@ -8,7 +8,8 @@
     "techStack": "Tech Stack",
     "openSource": "Open Source",
     "education": "Education",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog": "Blog"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -144,5 +145,11 @@
   "theme": {
     "light": "Light",
     "dark": "Dark"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Thoughts on software engineering, open source, and lessons learned along the way.",
+    "backToBlog": "Back to blog",
+    "readMore": "Read more"
   }
 }

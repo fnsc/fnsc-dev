@@ -4,6 +4,9 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     restart: unless-stopped
+    volumes:
+      - .:/app
+      - /app/node_modules
 
   caddy:
     image: caddy:2-alpine

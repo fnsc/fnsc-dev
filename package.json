@@ -13,10 +13,16 @@
   "dependencies": {
     "@react-pdf/renderer": "^4.3.2",
     "framer-motion": "^12.34.0",
+    "gray-matter": "^4.0.3",
     "next": "16.1.6",
     "next-intl": "^4.8.2",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "rehype-highlight": "^7.0.2",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
