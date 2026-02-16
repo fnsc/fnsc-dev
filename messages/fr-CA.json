@@ -148,6 +148,7 @@
   },
   "blog": {
     "title": "Blogue",
+    "description": "Réflexions sur la programmation, l'open source et les leçons apprises en chemin.",
     "backToBlog": "Retour au blogue",
     "readMore": "Lire la suite"
   }

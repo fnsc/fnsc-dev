@@ -148,6 +148,7 @@
   },
   "blog": {
     "title": "Blog",
+    "description": "Thoughts on software engineering, open source, and lessons learned along the way.",
     "backToBlog": "Back to blog",
     "readMore": "Read more"
   }

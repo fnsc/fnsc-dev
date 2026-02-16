@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -9,8 +10,44 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Link from "next/link";
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+const BASE_URL = "https://fnsc.dev";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
+  const hero = await getTranslations({ locale, namespace: "hero" });
+
+  const title = `${t("title")} – ${hero("name")}`;
+  const description = t("description");
+  const url = `${BASE_URL}/${locale}/blog`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `${BASE_URL}/${l}/blog`]),
+      ),
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+      locale,
+      siteName: hero("name"),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 export default async function BlogPage({

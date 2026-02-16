@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { getPostSlugs } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = routing.locales.map((locale) => ({
     url: `https://fnsc.dev/${locale}`,
     lastModified: new Date(),
@@ -11,17 +11,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   for (const locale of routing.locales) {
+    const posts = await getAllPosts(locale);
+
     entries.push({
       url: `https://fnsc.dev/${locale}/blog`,
-      lastModified: new Date(),
+      lastModified: posts[0]
+        ? new Date(posts[0].frontmatter.date)
+        : new Date(),
       changeFrequency: "weekly",
       priority: 0.7,
     });
 
-    for (const slug of getPostSlugs(locale)) {
+    for (const post of posts) {
       entries.push({
-        url: `https://fnsc.dev/${locale}/blog/${slug}`,
-        lastModified: new Date(),
+        url: `https://fnsc.dev/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.frontmatter.date),
         changeFrequency: "monthly",
         priority: 0.6,
       });

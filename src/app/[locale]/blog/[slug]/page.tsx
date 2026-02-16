@@ -6,6 +6,7 @@ import { getPostBySlug, getPostSlugs } from "@/lib/blog";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const BASE_URL = "https://fnsc.dev";
 
@@ -26,8 +27,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = await getPostBySlug(slug, locale);
+  const hero = await getTranslations({ locale, namespace: "hero" });
 
-  const title = post.frontmatter.title;
+  const title = `${post.frontmatter.title} – ${hero("name")}`;
   const description = post.frontmatter.description;
   const url = `${BASE_URL}/${locale}/blog/${slug}`;
 
@@ -46,10 +48,11 @@ export async function generateMetadata({
       url,
       type: "article",
       locale,
+      siteName: hero("name"),
       publishedTime: post.frontmatter.date,
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
     },
@@ -71,8 +74,8 @@ export default async function BlogPostPage({
     <>
       <Header />
       <main className="pt-20">
-        <article className="px-4 py-20">
-          <div className="mx-auto max-w-3xl">
+        <AnimatedSection className="px-4 py-20">
+          <article className="mx-auto max-w-3xl">
             <Link
               href={`/${locale}/blog`}
               className="mb-8 inline-block text-sm font-medium text-primary hover:underline"
@@ -96,8 +99,8 @@ export default async function BlogPostPage({
               className="blog-content"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
-          </div>
-        </article>
+          </article>
+        </AnimatedSection>
       </main>
       <Footer />
     </>
