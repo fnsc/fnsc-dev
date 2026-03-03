@@ -38,7 +38,7 @@
         "company": "Loopio",
         "period": "Oct 2024 – Present",
         "description": "Build and ship features for enterprise clients on a B2B SaaS platform\nWork across the full stack — backend with Symfony and PHP, frontend with React and TypeScript\nDrive performance improvements and increase test coverage in collaboration with product and QA",
-        "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
+        "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS, C#"
       },
       "netcoins": {
         "role": "Software Engineer",
