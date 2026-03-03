@@ -27,7 +27,7 @@ export const jobKeys: readonly JobKey[] = [
 ];
 
 export const techStack: TechStack = {
-  backend: ["PHP", "NodeJS", "Go", "TypeScript"],
+  backend: ["PHP", "NodeJS", "Go", "TypeScript", "C#"],
   frontend: ["HTML5", "CSS", "JavaScript", "TypeScript"],
   frameworks: ["Laravel", "Symfony", "ExpressJs", "VueJs", "ReactJs"],
   testing: ["PHPUnit", "TDD", "Docker", "GitHub Actions", "Jenkins"],
