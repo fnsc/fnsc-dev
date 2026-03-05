@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   page: {
     fontFamily: "Helvetica",
     fontSize: 10,
-    padding: "40 50",
+    padding: "30 40",
     lineHeight: 1.4,
     color: "#1a1a1a",
   },
@@ -229,7 +229,7 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
               <Text>
                 <Text style={styles.osName}>{project.name}</Text>
                 <Text style={styles.osRole}> ({project.role})</Text>
-                <Text> — {project.description} — </Text>
+                <Text> — {project.description} </Text>
               </Text>
             </View>
           ))}
