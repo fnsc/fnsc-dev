@@ -4,7 +4,7 @@ import type {
   TechStack,
   TechCategory,
   OpenSourceKey,
-  PersonalProjectsKeys,
+  PersonalProjectsKey,
   CertKey,
 } from "@/types/resume";
 
@@ -52,7 +52,7 @@ export const openSourceKeys: readonly OpenSourceKey[] = [
   "mongolid",
 ];
 
-export const personalProjectsKeys: readonly PersonalProjectsKeys[] = [
+export const personalProjectsKeys: readonly PersonalProjectsKey[] = [
   "luvia",
 ];
 

@@ -27,6 +27,6 @@ export type OpenSourceKey =
   | "metamorphosis"
   | "mongolid";
 
-export type PersonalProjectsKeys = "luvia";
+export type PersonalProjectsKey = "luvia";
 
 export type CertKey = "cspo" | "kanban" | "devops" | "wes";
