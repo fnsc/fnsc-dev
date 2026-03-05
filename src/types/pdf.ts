@@ -15,6 +15,12 @@ export interface PdfOpenSource {
   url: string;
 }
 
+export interface PdfPersonalProject {
+  name: string;
+  role: string;
+  description: string;
+}
+
 export interface PdfEducation {
   institution: string;
   program: string;
@@ -29,6 +35,7 @@ export interface PdfLabels {
   education: string;
   certificates: string;
   openSource: string;
+  personalProjects: string;
   technologies: string;
   present: string;
 }
@@ -44,5 +51,6 @@ export interface PdfResumeData {
   education: PdfEducation;
   certifications: string[];
   openSource: PdfOpenSource[];
+  personalProjects: PdfPersonalProject[];
   labels: PdfLabels;
 }

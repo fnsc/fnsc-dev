@@ -7,6 +7,7 @@
     "experience": "Experience",
     "techStack": "Tech Stack",
     "openSource": "Open Source",
+    "personalProjects": "Personal Projects",
     "education": "Education",
     "contact": "Contact",
     "blog": "Blog"
@@ -36,9 +37,9 @@
       "loopio": {
         "role": "Software Engineer",
         "company": "Loopio",
-        "period": "Oct 2024 – Present",
-        "description": "Build and ship features for enterprise clients on a B2B SaaS platform\nWork across the full stack — backend with Symfony and PHP, frontend with React and TypeScript\nDrive performance improvements and increase test coverage in collaboration with product and QA",
-        "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS, C#"
+        "period": "Oct 2024 – Mar 2026",
+        "description": "Build and ship features for enterprise clients on a B2B SaaS platform\nWork across the full stack — backend with Symfony and PHP, frontend with React and TypeScript\nParticipated in the development of a C# microservice for RFP automation, implementing document composition and formatting features to preserve original structure when integrating responses\nDrive performance improvements and increase test coverage in collaboration with product and QA",
+        "tech": "Symfony, PHP 8, C#, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "netcoins": {
         "role": "Software Engineer",
@@ -110,6 +111,17 @@
         "name": "MongoLid",
         "role": "contributor",
         "description": "MongoDB ODM for Laravel with ActiveRecord-style models"
+      }
+    }
+  },
+  "personalProjects": {
+    "title": "Personal Projects",
+    "owner": "Owner",
+    "projects": {
+      "luvia": {
+        "name": "Luvia",
+        "role": "owner",
+        "description": "Developing native iOS music streaming app for users with personal digital music libraries\nImplemented iCloud integration for streaming personal music collections without local storage\nBuilt customizable equalizer with presets and manual slider controls for audio customization\nArchitecting multi-cloud support (Google Drive, Dropbox) for future releases"
       }
     }
   },

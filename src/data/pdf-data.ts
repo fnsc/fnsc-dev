@@ -6,6 +6,7 @@ import {
   categoryKeys,
   openSourceKeys,
   openSourceLinks,
+  personalProjectsKeys,
   certKeys,
 } from "@/data/resume";
 import type { PdfResumeData } from "@/types/pdf";
@@ -41,6 +42,12 @@ export async function buildPdfResumeData(
     url: openSourceLinks[key],
   }));
 
+  const personalProjects = personalProjectsKeys.map((key) => ({
+    name: messages.personalProjects.projects[key].name,
+    role: messages.personalProjects.projects[key].role,
+    description: messages.personalProjects.projects[key].description,
+  }));
+
   const education = {
     institution: messages.education.degree.institution,
     program: messages.education.degree.program,
@@ -59,6 +66,7 @@ export async function buildPdfResumeData(
     education,
     certifications,
     openSource,
+    personalProjects,
     labels: {
       summary: messages.pdf.summary,
       experience: messages.experience.title,
@@ -66,6 +74,7 @@ export async function buildPdfResumeData(
       education: messages.education.education,
       certificates: messages.education.certificates,
       openSource: messages.openSource.title,
+      personalProjects: messages.personalProjects.title,
       technologies: messages.experience.technologies,
       present: messages.experience.present,
     },

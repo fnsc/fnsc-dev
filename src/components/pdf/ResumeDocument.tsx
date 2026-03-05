@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   page: {
     fontFamily: "Helvetica",
     fontSize: 10,
-    padding: "40 50",
+    padding: "30 40",
     lineHeight: 1.4,
     color: "#1a1a1a",
   },
@@ -217,6 +217,19 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
                 <Link src={project.url} style={styles.link}>
                   <Text>{project.url}</Text>
                 </Link>
+              </Text>
+            </View>
+          ))}
+        </View>
+        {/* Personal Projects */}
+        <View>
+          <Text style={styles.sectionTitle}>{data.labels.personalProjects}</Text>
+          {data.personalProjects.map((project, i) => (
+            <View key={i} style={styles.osBlock}>
+              <Text>
+                <Text style={styles.osName}>{project.name}</Text>
+                <Text style={styles.osRole}> ({project.role})</Text>
+                <Text> — {project.description} </Text>
               </Text>
             </View>
           ))}

@@ -8,7 +8,7 @@ export default async function Education() {
   const t = await getTranslations("education");
 
   return (
-    <AnimatedSection id="education" className="px-4 py-20">
+    <AnimatedSection id="education" className="bg-bg-secondary px-4 py-20">
       <div className="mx-auto max-w-4xl">
         <SectionHeading>{t("title")}</SectionHeading>
 

@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import TechStack from "@/components/TechStack";
 import OpenSource from "@/components/OpenSource";
+import PersonalProject from "@/components/PersonalProject";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -26,6 +27,7 @@ export default async function ResumePage({
         <Experience />
         <TechStack />
         <OpenSource />
+        <PersonalProject />
         <Education />
         <Contact />
       </main>
