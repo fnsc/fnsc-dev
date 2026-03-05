@@ -36,9 +36,9 @@
       "loopio": {
         "role": "Engenheiro de Software",
         "company": "Loopio",
-        "period": "Out 2024 – Presente",
-        "description": "Construção e entrega de funcionalidades para clientes enterprise em uma plataforma SaaS B2B\nAtuação em toda a stack — backend com Symfony e PHP, frontend com React e TypeScript\nMelhorias de performance e aumento de cobertura de testes em colaboração com produto e QA",
-        "tech": "Symfony, PHP 8, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
+        "period": "Out 2024 – Mar 2026",
+        "description": "Construção e entrega de funcionalidades para clientes enterprise em uma plataforma SaaS B2B\nAtuação em toda a stack — backend com Symfony e PHP, frontend com React e TypeScript\nParticipou do desenvolvimento de microserviço C# para automação de RFPs, implementando funcionalidades de composição e formatação de documentos para preservar estrutura original ao integrar respostas.\nMelhorias de performance e aumento de cobertura de testes em colaboração com produto e QA",
+        "tech": "Symfony, PHP 8, C#, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "netcoins": {
         "role": "Engenheiro de Software",
