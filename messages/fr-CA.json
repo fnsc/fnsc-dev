@@ -7,6 +7,7 @@
     "experience": "Expérience",
     "techStack": "Technologies",
     "openSource": "Open Source",
+    "personalProjects": "Projets Personnels",
     "education": "Formation",
     "contact": "Contact",
     "blog": "Blogue"
@@ -36,7 +37,7 @@
       "loopio": {
         "role": "Ingénieur logiciel",
         "company": "Loopio",
-        "period": "Oct 2024 – Mar 2026",
+        "period": "Oct 2024 – Mars 2026",
         "description": "Développement et livraison de fonctionnalités pour clients entreprise sur une plateforme SaaS B2B\nTravail sur l'ensemble de la stack — backend avec Symfony et PHP, frontend avec React et TypeScript\nA participé au développement d'un microservice C# pour l'automatisation des appels d'offres (RFP), en implémentant des fonctionnalités de composition et de formatage de documents pour préserver la structure originale lors de l'intégration des réponses\nAmélioration de la performance et augmentation de la couverture de tests en collaboration avec produit et QA",
         "tech": "Symfony, PHP 8, C#, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
@@ -110,6 +111,17 @@
         "name": "MongoLid",
         "role": "contributor",
         "description": "ODM MongoDB pour Laravel avec modèles de style ActiveRecord"
+      }
+    }
+  },
+  "personalProjects": {
+    "title": "Projets personnels",
+    "owner": "Propriétaire",
+    "projects": {
+      "luvia": {
+        "name": "Luvia",
+        "role": "owner",
+        "description": "Développement d'une application iOS native de streaming musical pour utilisateurs avec bibliothèques musicales numériques personnelles\nImplémentation de l'intégration iCloud pour diffuser des collections musicales sans stockage local\nCréation d'un égaliseur personnalisable avec préréglages et contrôles manuels pour la personnalisation audio\nArchitecture de support multi-cloud (Google Drive, Dropbox) pour les versions futures"
       }
     }
   },

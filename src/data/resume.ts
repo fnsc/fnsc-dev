@@ -4,6 +4,7 @@ import type {
   TechStack,
   TechCategory,
   OpenSourceKey,
+  PersonalProjectsKeys,
   CertKey,
 } from "@/types/resume";
 
@@ -29,7 +30,7 @@ export const jobKeys: readonly JobKey[] = [
 export const techStack: TechStack = {
   backend: ["PHP", "NodeJS", "Go", "TypeScript", "C#"],
   frontend: ["HTML5", "CSS", "JavaScript", "TypeScript"],
-  frameworks: ["Laravel", "Symfony", "ExpressJs", "VueJs", "ReactJs"],
+  frameworks: ["Laravel", "Symfony", "ExpressJs", "VueJs", "ReactJs", "DotNet"],
   testing: ["PHPUnit", "TDD", "Docker", "GitHub Actions", "Jenkins"],
   databases: ["MySQL", "PostgreSQL", "MongoDB"],
   cloud: ["AWS", "GCP", "Azure"],
@@ -49,6 +50,10 @@ export const openSourceKeys: readonly OpenSourceKey[] = [
   "cpfCnpj",
   "metamorphosis",
   "mongolid",
+];
+
+export const personalProjectsKeys: readonly PersonalProjectsKeys[] = [
+  "luvia",
 ];
 
 export const openSourceLinks: Record<OpenSourceKey, string> = {

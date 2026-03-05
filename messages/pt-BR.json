@@ -7,6 +7,7 @@
     "experience": "Experiência",
     "techStack": "Tecnologias",
     "openSource": "Open Source",
+    "personalProjects": "Projetos Pessoais",
     "education": "Formação",
     "contact": "Contato",
     "blog": "Blog"
@@ -110,6 +111,17 @@
         "name": "MongoLid",
         "role": "contributor",
         "description": "ODM MongoDB para Laravel com modelos estilo ActiveRecord"
+      }
+    }
+  },
+  "personalProjects": {
+    "title": "Projetos Pessoais",
+    "owner": "Criador",
+    "projects": {
+      "luvia": {
+        "name": "Luvia",
+        "role": "owner",
+        "description": "App nativo de streaming de música para iOS voltado para usuários com bibliotecas musicais digitais próprias\nImplementei integração com iCloud para reproduzir coleções de música sem precisar de armazenamento local\nCriei um equalizador personalizável com presets e controles manuais para ajuste de áudio\nArquitetando suporte para múltiplas plataformas de nuvem (Google Drive, Dropbox) para versões futuras"
       }
     }
   },

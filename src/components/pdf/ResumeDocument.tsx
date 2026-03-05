@@ -221,6 +221,19 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
             </View>
           ))}
         </View>
+        {/* Personal Projects */}
+        <View>
+          <Text style={styles.sectionTitle}>{data.labels.personalProjects}</Text>
+          {data.personalProjects.map((project, i) => (
+            <View key={i} style={styles.osBlock}>
+              <Text>
+                <Text style={styles.osName}>{project.name}</Text>
+                <Text style={styles.osRole}> ({project.role})</Text>
+                <Text> — {project.description} — </Text>
+              </Text>
+            </View>
+          ))}
+        </View>
       </Page>
     </Document>
   );

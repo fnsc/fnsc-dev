@@ -8,7 +8,7 @@ export default async function Contact() {
   const t = await getTranslations("contact");
 
   return (
-    <AnimatedSection id="contact" className="bg-bg-secondary px-4 py-20">
+    <AnimatedSection id="contact" className="px-4 py-20">
       <div className="mx-auto max-w-4xl text-center">
         <SectionHeading className="mb-4">{t("title")}</SectionHeading>
         <p className="mx-auto mb-12 max-w-xl text-fg-secondary">
