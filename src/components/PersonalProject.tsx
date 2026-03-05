@@ -22,7 +22,7 @@ export default function PersonalProject() {
             return (
               <a
                 key={key}
-                href={personalProjectsKeys[key]}
+                href="#personal-projects" // TODO: add real links
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-6 transition-colors hover:border-primary"
