@@ -7,6 +7,7 @@ import {
   openSourceKeys,
   openSourceLinks,
   personalProjectsKeys,
+  personalProjectsLinks,
   certKeys,
 } from "@/data/resume";
 import type { PdfResumeData } from "@/types/pdf";
@@ -46,6 +47,7 @@ export async function buildPdfResumeData(
     name: messages.personalProjects.projects[key].name,
     role: messages.personalProjects.projects[key].role,
     description: messages.personalProjects.projects[key].description,
+    url: personalProjectsLinks[key],
   }));
 
   const education = {

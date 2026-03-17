@@ -229,7 +229,10 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
               <Text>
                 <Text style={styles.osName}>{project.name}</Text>
                 <Text style={styles.osRole}> ({project.role})</Text>
-                <Text> — {project.description} </Text>
+                <Text> — {project.description} — </Text>
+                <Link src={project.url} style={styles.link}>
+                  <Text>{project.url}</Text>
+                </Link>
               </Text>
             </View>
           ))}

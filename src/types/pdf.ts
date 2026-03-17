@@ -19,6 +19,7 @@ export interface PdfPersonalProject {
   name: string;
   role: string;
   description: string;
+  url: string;
 }
 
 export interface PdfEducation {

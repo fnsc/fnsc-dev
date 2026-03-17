@@ -14,7 +14,7 @@
   },
   "hero": {
     "greeting": "Bonjour, je suis",
-    "name": "Gabriel Fonseca",
+    "name": "Gabriel Domingues da Fonseca",
     "title": "Ingénieur logiciel",
     "subtitle": "Création de solutions évolutives et sécurisées depuis 2016",
     "viewResume": "Voir le CV",
@@ -121,7 +121,7 @@
       "luvia": {
         "name": "Luvia",
         "role": "owner",
-        "description": "Développement d'une application iOS native de streaming musical pour utilisateurs avec bibliothèques musicales numériques personnelles\nImplémentation de l'intégration iCloud pour diffuser des collections musicales sans stockage local\nCréation d'un égaliseur personnalisable avec préréglages et contrôles manuels pour la personnalisation audio\nArchitecture de support multi-cloud (Google Drive, Dropbox) pour les versions futures"
+        "description": "Application iOS native permettant d'écouter sa bibliothèque musicale personnelle stockée dans iCloud ou localement, en utilisant un minimum d'espace sur l'appareil\nL'utilisateur sélectionne un répertoire et l'app répertorie tous les fichiers audio — aucune synchronisation avec un ordinateur requise\nIntégration Apple CarPlay et égaliseur 10 bandes pour une expérience d'écoute complète\nPage d'accueil affichant les sorties à venir et récentes (6 derniers mois) des artistes présents dans la bibliothèque de l'utilisateur"
       }
     }
   },

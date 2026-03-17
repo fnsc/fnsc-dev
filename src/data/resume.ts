@@ -63,4 +63,8 @@ export const openSourceLinks: Record<OpenSourceKey, string> = {
   mongolid: "https://github.com/leroy-merlin-br/mongolid",
 };
 
+export const personalProjectsLinks: Record<PersonalProjectsKey, string> = {
+  luvia: "https://testflight.apple.com/join/Qhg7xcyK",
+};
+
 export const certKeys: readonly CertKey[] = ["cspo", "kanban", "devops", "wes"];

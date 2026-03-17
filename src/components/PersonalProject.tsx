@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
-import { personalProjectsKeys } from "@/data/resume";
+import { personalProjectsKeys, personalProjectsLinks } from "@/data/resume";
 
 export default function PersonalProject() {
   const t = useTranslations("personalProjects");
@@ -22,7 +22,7 @@ export default function PersonalProject() {
             return (
               <a
                 key={key}
-                href="#personal-projects" // TODO: add real links
+                href={personalProjectsLinks[key]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-6 transition-colors hover:border-primary"
