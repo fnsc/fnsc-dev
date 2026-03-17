@@ -17,6 +17,7 @@ export interface TechStack {
   testing: string[];
   databases: string[];
   cloud: string[];
+  integrations: string[];
 }
 
 export type TechCategory = keyof TechStack;
@@ -30,3 +31,13 @@ export type OpenSourceKey =
 export type PersonalProjectsKey = "luvia";
 
 export type CertKey = "cspo" | "kanban" | "devops" | "wes";
+
+export type SoftSkillKey =
+  | "technicalLeadership"
+  | "mentorship"
+  | "crossFunctionalCollab"
+  | "codeReview"
+  | "agile"
+  | "problemSolving";
+
+export type LanguageKey = "portuguese" | "english";

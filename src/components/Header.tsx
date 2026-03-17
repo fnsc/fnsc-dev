@@ -13,6 +13,7 @@ const navItems = [
   { key: "techStack", href: "#tech-stack" },
   { key: "openSource", href: "#open-source" },
   { key: "personalProjects", href: "#personal-projects" },
+  { key: "softSkills", href: "#soft-skills" },
   { key: "education", href: "#education" },
   { key: "contact", href: "#contact" },
 ] as const;

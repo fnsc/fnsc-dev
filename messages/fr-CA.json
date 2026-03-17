@@ -8,13 +8,15 @@
     "techStack": "Technologies",
     "openSource": "Open Source",
     "personalProjects": "Projets Personnels",
+    "softSkills": "Compétences interpersonnelles",
     "education": "Formation",
     "contact": "Contact",
     "blog": "Blogue"
   },
   "hero": {
     "greeting": "Bonjour, je suis",
-    "name": "Gabriel Domingues da Fonseca",
+    "name": "Gabriel Fonseca",
+    "resumeName": "Gabriel Domingues da Fonseca",
     "title": "Ingénieur logiciel",
     "subtitle": "Création de solutions évolutives et sécurisées depuis 2016",
     "viewResume": "Voir le CV",
@@ -38,7 +40,7 @@
         "role": "Ingénieur logiciel",
         "company": "Loopio",
         "period": "Oct 2024 – Mars 2026",
-        "description": "Développement et livraison de fonctionnalités pour clients entreprise sur une plateforme SaaS B2B\nTravail sur l'ensemble de la stack — backend avec Symfony et PHP, frontend avec React et TypeScript\nA participé au développement d'un microservice C# pour l'automatisation des appels d'offres (RFP), en implémentant des fonctionnalités de composition et de formatage de documents pour préserver la structure originale lors de l'intégration des réponses\nAmélioration de la performance et augmentation de la couverture de tests en collaboration avec produit et QA",
+        "description": "Développement et livraison de fonctionnalités pour clients entreprise sur une plateforme SaaS B2B\nLivraison de la fonctionnalité de licences par Business Unit, permettant aux clients entreprise d'acquérir des licences par unité à un tarif réduit — débloquant des contrats auparavant perdus en raison d'un modèle de tarification tout-ou-rien\nTravail sur l'ensemble de la stack — backend avec Symfony et PHP, frontend avec React et TypeScript\nA participé au développement d'un microservice C# pour l'automatisation des appels d'offres (RFP), en implémentant des fonctionnalités de composition et de formatage de documents pour préserver la structure originale lors de l'intégration des réponses\nAmélioration de la performance et augmentation de la couverture de tests en collaboration avec produit et QA",
         "tech": "Symfony, PHP 8, C#, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "netcoins": {
@@ -52,8 +54,8 @@
         "role": "Ingénieur logiciel",
         "company": "M56 Studios",
         "period": "Août 2022 – Déc 2022",
-        "description": "Conception et développement d'endpoints API REST alimentant la plateforme fitness Fit52\nResponsable de bout en bout de l'intégration avec Shopify, Stripe, Segment et RevenueCat pour le traitement des paiements et la gestion des abonnements",
-        "tech": "Laravel, MySQL, Intégrations API"
+        "description": "Conception et développement d'endpoints API REST alimentant la plateforme fitness Fit52, avec plus de 50K utilisateurs\nResponsable de bout en bout de l'intégration avec Shopify, Stripe, Segment et RevenueCat pour le traitement des paiements et la gestion des abonnements",
+        "tech": "Laravel, MySQL, Shopify, Stripe, Segment, RevenueCat"
       },
       "leroy": {
         "role": "Développeur Backend",
@@ -83,9 +85,10 @@
     "backend": "Backend",
     "frontend": "Frontend",
     "frameworks": "Frameworks",
-    "testing": "Tests & Outils",
-    "databases": "Bases de données",
-    "cloud": "Infonuagique"
+    "testing": "Tests & Observabilité",
+    "databases": "Bases de données & Cache",
+    "cloud": "Infonuagique",
+    "integrations": "Intégrations & Messagerie"
   },
   "openSource": {
     "title": "Open Source",
@@ -123,6 +126,42 @@
         "role": "owner",
         "description": "Application iOS native permettant d'écouter sa bibliothèque musicale personnelle stockée dans iCloud ou localement, en utilisant un minimum d'espace sur l'appareil\nL'utilisateur sélectionne un répertoire et l'app répertorie tous les fichiers audio — aucune synchronisation avec un ordinateur requise\nIntégration Apple CarPlay et égaliseur 10 bandes pour une expérience d'écoute complète\nPage d'accueil affichant les sorties à venir et récentes (6 derniers mois) des artistes présents dans la bibliothèque de l'utilisateur"
       }
+    }
+  },
+  "softSkills": {
+    "title": "Compétences interpersonnelles",
+    "skills": {
+      "technicalLeadership": {
+        "name": "Leadership technique",
+        "description": "Oriente les décisions techniques et les standards de qualité au sein des équipes, en promouvant les bonnes pratiques comme le TDD et la revue de code"
+      },
+      "mentorship": {
+        "name": "Mentorat",
+        "description": "Accompagne les développeurs juniors par des revues de code, du pair programming et le partage de connaissances"
+      },
+      "crossFunctionalCollab": {
+        "name": "Collaboration multidisciplinaire",
+        "description": "Travaille efficacement avec les équipes produit, QA et les parties prenantes métier pour transformer les exigences en logiciels fiables"
+      },
+      "codeReview": {
+        "name": "Revue de code",
+        "description": "Fournit des retours techniques et constructifs qui améliorent la qualité du code et favorisent l'apprentissage de l'équipe"
+      },
+      "agile": {
+        "name": "Agile & Scrum",
+        "description": "Expérience en flux agiles avec certification CSPO ; à l'aise avec les sprints, les rétrospectives et la livraison itérative"
+      },
+      "problemSolving": {
+        "name": "Résolution analytique de problèmes",
+        "description": "Décompose des défis techniques complexes — des pipelines de données haute performance aux systèmes distribués — en solutions pragmatiques"
+      }
+    }
+  },
+  "languages": {
+    "title": "Langues",
+    "items": {
+      "portuguese": "Portugais — Langue maternelle",
+      "english": "Anglais — Courant"
     }
   },
   "education": {

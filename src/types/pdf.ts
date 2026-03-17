@@ -37,6 +37,8 @@ export interface PdfLabels {
   certificates: string;
   openSource: string;
   personalProjects: string;
+  softSkills: string;
+  languages: string;
   technologies: string;
   present: string;
 }
@@ -53,5 +55,7 @@ export interface PdfResumeData {
   certifications: string[];
   openSource: PdfOpenSource[];
   personalProjects: PdfPersonalProject[];
+  softSkills: string[];
+  languages: string[];
   labels: PdfLabels;
 }

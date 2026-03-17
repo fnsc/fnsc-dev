@@ -237,6 +237,18 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
             </View>
           ))}
         </View>
+
+        {/* Soft Skills */}
+        <View>
+          <Text style={styles.sectionTitle}>{data.labels.softSkills}</Text>
+          <Text>{data.softSkills.join(" • ")}</Text>
+        </View>
+
+        {/* Languages */}
+        <View>
+          <Text style={styles.sectionTitle}>{data.labels.languages}</Text>
+          <Text>{data.languages.join(" • ")}</Text>
+        </View>
       </Page>
     </Document>
   );

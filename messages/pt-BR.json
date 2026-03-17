@@ -8,13 +8,15 @@
     "techStack": "Tecnologias",
     "openSource": "Open Source",
     "personalProjects": "Projetos Pessoais",
+    "softSkills": "Soft Skills",
     "education": "Formação",
     "contact": "Contato",
     "blog": "Blog"
   },
   "hero": {
     "greeting": "Olá, eu sou",
-    "name": "Gabriel Domingues da Fonseca",
+    "name": "Gabriel Fonseca",
+    "resumeName": "Gabriel Domingues da Fonseca",
     "title": "Engenheiro de Software",
     "subtitle": "Construindo soluções escaláveis e seguras desde 2016",
     "viewResume": "Ver Currículo",
@@ -38,7 +40,7 @@
         "role": "Engenheiro de Software",
         "company": "Loopio",
         "period": "Out 2024 – Mar 2026",
-        "description": "Construção e entrega de funcionalidades para clientes enterprise em uma plataforma SaaS B2B\nAtuação em toda a stack — backend com Symfony e PHP, frontend com React e TypeScript\nParticipou do desenvolvimento de microserviço C# para automação de RFPs, implementando funcionalidades de composição e formatação de documentos para preservar estrutura original ao integrar respostas.\nMelhorias de performance e aumento de cobertura de testes em colaboração com produto e QA",
+        "description": "Construção e entrega de funcionalidades para clientes enterprise em uma plataforma SaaS B2B\nEntregou a feature de licenciamento por Business Unit, permitindo que clientes enterprise adquiram licenças por unidade a um preço menor — desbloqueando negociações que antes eram perdidas por conta do modelo de precificação tudo-ou-nada\nAtuação em toda a stack — backend com Symfony e PHP, frontend com React e TypeScript\nParticipou do desenvolvimento de microserviço C# para automação de RFPs, implementando funcionalidades de composição e formatação de documentos para preservar estrutura original ao integrar respostas\nMelhorias de performance e aumento de cobertura de testes em colaboração com produto e QA",
         "tech": "Symfony, PHP 8, C#, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "netcoins": {
@@ -52,8 +54,8 @@
         "role": "Engenheiro de Software",
         "company": "M56 Studios",
         "period": "Ago 2022 – Dez 2022",
-        "description": "Projeto e construção de endpoints de API REST alimentando a plataforma fitness Fit52\nResponsabilidade ponta a ponta pela integração com Shopify, Stripe, Segment e RevenueCat para processamento de pagamentos e gestão de assinaturas",
-        "tech": "Laravel, MySQL, Integrações de API"
+        "description": "Projeto e construção de endpoints de API REST alimentando a plataforma fitness Fit52, com mais de 50K usuários\nResponsabilidade ponta a ponta pela integração com Shopify, Stripe, Segment e RevenueCat para processamento de pagamentos e gestão de assinaturas",
+        "tech": "Laravel, MySQL, Shopify, Stripe, Segment, RevenueCat"
       },
       "leroy": {
         "role": "Desenvolvedor Backend",
@@ -83,9 +85,10 @@
     "backend": "Backend",
     "frontend": "Frontend",
     "frameworks": "Frameworks",
-    "testing": "Testes & Ferramentas",
-    "databases": "Bancos de Dados",
-    "cloud": "Computação em Nuvem"
+    "testing": "Testes & Observabilidade",
+    "databases": "Bancos de Dados & Cache",
+    "cloud": "Computação em Nuvem",
+    "integrations": "Integrações & Mensageria"
   },
   "openSource": {
     "title": "Open Source",
@@ -123,6 +126,42 @@
         "role": "owner",
         "description": "App nativo para iOS que permite ouvir a própria biblioteca de músicas armazenada no iCloud ou localmente no dispositivo, ocupando o mínimo de espaço possível no telefone\nO usuário escolhe um diretório e o app mapeia todos os arquivos de música — sem necessidade de sincronizar com o computador\nIntegração com Apple CarPlay e equalizador de 10 bandas para uma experiência completa de audição\nHome screen que exibe lançamentos futuros e recentes (últimos 6 meses) dos artistas presentes na biblioteca do usuário"
       }
+    }
+  },
+  "softSkills": {
+    "title": "Soft Skills",
+    "skills": {
+      "technicalLeadership": {
+        "name": "Liderança Técnica",
+        "description": "Conduz decisões técnicas e padrões de qualidade dentro das equipes, promovendo boas práticas como TDD e code review"
+      },
+      "mentorship": {
+        "name": "Mentoria",
+        "description": "Apoia desenvolvedores juniores por meio de code reviews, pair programming e compartilhamento de conhecimento"
+      },
+      "crossFunctionalCollab": {
+        "name": "Colaboração Multidisciplinar",
+        "description": "Trabalha com eficiência junto a produto, QA e stakeholders de negócio para transformar requisitos em software confiável"
+      },
+      "codeReview": {
+        "name": "Code Review",
+        "description": "Fornece feedback técnico e construtivo que eleva a qualidade do código e promove o aprendizado do time"
+      },
+      "agile": {
+        "name": "Agile & Scrum",
+        "description": "Experiência em fluxos ágeis com certificação CSPO; confortável com sprints, retrospectivas e entrega iterativa"
+      },
+      "problemSolving": {
+        "name": "Resolução Analítica de Problemas",
+        "description": "Decompõe desafios técnicos complexos — de pipelines de dados de alta vazão a sistemas distribuídos — em soluções pragmáticas"
+      }
+    }
+  },
+  "languages": {
+    "title": "Idiomas",
+    "items": {
+      "portuguese": "Português — Nativo",
+      "english": "Inglês — Fluente"
     }
   },
   "education": {

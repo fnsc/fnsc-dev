@@ -9,6 +9,8 @@ import {
   personalProjectsKeys,
   personalProjectsLinks,
   certKeys,
+  softSkillKeys,
+  languageKeys,
 } from "@/data/resume";
 import type { PdfResumeData } from "@/types/pdf";
 
@@ -50,6 +52,14 @@ export async function buildPdfResumeData(
     url: personalProjectsLinks[key],
   }));
 
+  const softSkills = softSkillKeys.map(
+    (key) => messages.softSkills.skills[key].name,
+  );
+
+  const languages = languageKeys.map(
+    (key) => messages.languages.items[key],
+  );
+
   const education = {
     institution: messages.education.degree.institution,
     program: messages.education.degree.program,
@@ -58,7 +68,7 @@ export async function buildPdfResumeData(
   };
 
   return {
-    name: messages.hero.name,
+    name: messages.hero.resumeName,
     title: messages.hero.title,
     summary: messages.about.description,
     contact: contactInfo,
@@ -69,6 +79,8 @@ export async function buildPdfResumeData(
     certifications,
     openSource,
     personalProjects,
+    softSkills,
+    languages,
     labels: {
       summary: messages.pdf.summary,
       experience: messages.experience.title,
@@ -77,6 +89,8 @@ export async function buildPdfResumeData(
       certificates: messages.education.certificates,
       openSource: messages.openSource.title,
       personalProjects: messages.personalProjects.title,
+      softSkills: messages.softSkills.title,
+      languages: messages.languages.title,
       technologies: messages.experience.technologies,
       present: messages.experience.present,
     },
