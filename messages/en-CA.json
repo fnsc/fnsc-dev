@@ -8,6 +8,7 @@
     "techStack": "Tech Stack",
     "openSource": "Open Source",
     "personalProjects": "Personal Projects",
+    "softSkills": "Soft Skills",
     "education": "Education",
     "contact": "Contact",
     "blog": "Blog"
@@ -15,6 +16,7 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Gabriel Fonseca",
+    "resumeName": "Gabriel Domingues da Fonseca",
     "title": "Software Engineer",
     "subtitle": "Building scalable, secure solutions since 2016",
     "viewResume": "View Resume",
@@ -38,7 +40,7 @@
         "role": "Software Engineer",
         "company": "Loopio",
         "period": "Oct 2024 – Mar 2026",
-        "description": "Build and ship features for enterprise clients on a B2B SaaS platform\nWork across the full stack — backend with Symfony and PHP, frontend with React and TypeScript\nParticipated in the development of a C# microservice for RFP automation, implementing document composition and formatting features to preserve original structure when integrating responses\nDrive performance improvements and increase test coverage in collaboration with product and QA",
+        "description": "Build and ship features for enterprise clients on a B2B SaaS platform\nDelivered the Business Unit licensing feature, enabling enterprise clients to purchase per-unit licenses at a lower price point — unlocking deals that were previously lost due to all-or-nothing pricing\nWork across the full stack — backend with Symfony and PHP, frontend with React and TypeScript\nParticipated in the development of a C# microservice for RFP automation, implementing document composition and formatting features to preserve original structure when integrating responses\nDrive performance improvements and increase test coverage in collaboration with product and QA",
         "tech": "Symfony, PHP 8, C#, TypeScript, ReactJs, MySQL, PHPUnit, TDD, Redis, Docker, Code Review, AWS"
       },
       "netcoins": {
@@ -52,8 +54,8 @@
         "role": "Software Engineer",
         "company": "M56 Studios",
         "period": "Aug 2022 – Dec 2022",
-        "description": "Designed and built REST API endpoints powering the Fit52 fitness platform\nOwned end-to-end integration with Shopify, Stripe, Segment, and RevenueCat for payment processing and subscription management",
-        "tech": "Laravel, MySQL, API Integrations"
+        "description": "Designed and built REST API endpoints powering the Fit52 fitness platform, serving 50K+ users\nOwned end-to-end integration with Shopify, Stripe, Segment, and RevenueCat for payment processing and subscription management",
+        "tech": "Laravel, MySQL, Shopify, Stripe, Segment, RevenueCat"
       },
       "leroy": {
         "role": "Backend Developer",
@@ -83,9 +85,10 @@
     "backend": "Backend",
     "frontend": "Frontend",
     "frameworks": "Frameworks",
-    "testing": "Testing & Tools",
-    "databases": "Databases",
-    "cloud": "Cloud Computing"
+    "testing": "Testing & Observability",
+    "databases": "Databases & Caching",
+    "cloud": "Cloud Computing",
+    "integrations": "Integrations & Messaging"
   },
   "openSource": {
     "title": "Open Source",
@@ -121,8 +124,44 @@
       "luvia": {
         "name": "Luvia",
         "role": "owner",
-        "description": "Developing native iOS music streaming app for users with personal digital music libraries\nImplemented iCloud integration for streaming personal music collections without local storage\nBuilt customizable equalizer with presets and manual slider controls for audio customization\nArchitecting multi-cloud support (Google Drive, Dropbox) for future releases"
+        "description": "Developing a native iOS app that lets users listen to their personal music library stored in iCloud or locally on device with minimal phone storage usage\nUsers select a directory and the app maps all music files — no computer sync required\nIntegrated Apple CarPlay support and a 10-band equalizer for a full listening experience\nBuilt a home screen surfacing upcoming releases and recent drops (last 6 months) from artists in the user's library"
       }
+    }
+  },
+  "softSkills": {
+    "title": "Soft Skills",
+    "skills": {
+      "technicalLeadership": {
+        "name": "Technical Leadership",
+        "description": "Drive technical direction and quality standards within teams, championing best practices such as TDD and code review"
+      },
+      "mentorship": {
+        "name": "Mentorship",
+        "description": "Guide and support junior developers through code reviews, pair programming, and knowledge sharing"
+      },
+      "crossFunctionalCollab": {
+        "name": "Cross-functional Collaboration",
+        "description": "Work effectively with product, QA, and business stakeholders to translate requirements into reliable software"
+      },
+      "codeReview": {
+        "name": "Code Review",
+        "description": "Provide thorough, constructive feedback that improves code quality and promotes team learning"
+      },
+      "agile": {
+        "name": "Agile & Scrum",
+        "description": "Experienced in agile workflows with a CSPO certification; comfortable with sprints, retrospectives, and iterative delivery"
+      },
+      "problemSolving": {
+        "name": "Analytical Problem Solving",
+        "description": "Break down complex technical challenges — from high-throughput data pipelines to distributed system design — into pragmatic solutions"
+      }
+    }
+  },
+  "languages": {
+    "title": "Languages",
+    "items": {
+      "portuguese": "Portuguese — Native",
+      "english": "English — Fluent"
     }
   },
   "education": {

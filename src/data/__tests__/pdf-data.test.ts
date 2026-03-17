@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { buildPdfResumeData } from "@/data/pdf-data";
-import { contactInfo, jobKeys, openSourceKeys, certKeys } from "@/data/resume";
+import { contactInfo, jobKeys, openSourceKeys, certKeys, personalProjectsKeys, softSkillKeys, languageKeys } from "@/data/resume";
 
 describe("buildPdfResumeData", () => {
   it("throws on invalid locale", async () => {
@@ -10,7 +10,7 @@ describe("buildPdfResumeData", () => {
   it("returns complete data for en-CA", async () => {
     const data = await buildPdfResumeData("en-CA");
 
-    expect(data.name).toBe("Gabriel Fonseca");
+    expect(data.name).toBe("Gabriel Domingues da Fonseca");
     expect(data.title).toBe("Software Engineer");
     expect(data.contact).toEqual(contactInfo);
     expect(data.summary).toBeTruthy();
@@ -61,6 +61,49 @@ describe("buildPdfResumeData", () => {
     const data = await buildPdfResumeData("en-CA");
 
     expect(data.categoryLabels.testing).toBe("Testing & Tools");
+  });
+
+  it("includes integrations category label", async () => {
+    const data = await buildPdfResumeData("en-CA");
+
+    expect(data.categoryLabels.integrations).toBeTruthy();
+  });
+
+  it("maps all personal projects with url", async () => {
+    const data = await buildPdfResumeData("en-CA");
+
+    expect(data.personalProjects).toHaveLength(personalProjectsKeys.length);
+    for (const project of data.personalProjects) {
+      expect(project.name).toBeTruthy();
+      expect(project.role).toBeTruthy();
+      expect(project.description).toBeTruthy();
+      expect(project.url).toMatch(/^https:\/\//);
+    }
+  });
+
+  it("maps all soft skills", async () => {
+    const data = await buildPdfResumeData("en-CA");
+
+    expect(data.softSkills).toHaveLength(softSkillKeys.length);
+    for (const skill of data.softSkills) {
+      expect(skill).toBeTruthy();
+    }
+  });
+
+  it("maps all languages", async () => {
+    const data = await buildPdfResumeData("en-CA");
+
+    expect(data.languages).toHaveLength(languageKeys.length);
+    for (const lang of data.languages) {
+      expect(lang).toBeTruthy();
+    }
+  });
+
+  it("includes soft skills and languages labels", async () => {
+    const data = await buildPdfResumeData("en-CA");
+
+    expect(data.labels.softSkills).toBeTruthy();
+    expect(data.labels.languages).toBeTruthy();
   });
 
   it("returns localized content for each locale", async () => {

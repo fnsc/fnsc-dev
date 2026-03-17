@@ -5,7 +5,10 @@ import type {
   TechCategory,
   OpenSourceKey,
   PersonalProjectsKey,
+  PersonalProjectMeta,
   CertKey,
+  SoftSkillKey,
+  LanguageKey,
 } from "@/types/resume";
 
 export const contactInfo: ContactInfo = {
@@ -28,12 +31,13 @@ export const jobKeys: readonly JobKey[] = [
 ];
 
 export const techStack: TechStack = {
-  backend: ["PHP", "NodeJS", "Go", "TypeScript", "C#"],
+  backend: ["PHP", "NodeJS", "Go", "TypeScript", "C#", "Swift"],
   frontend: ["HTML5", "CSS", "JavaScript", "TypeScript"],
   frameworks: ["Laravel", "Symfony", "ExpressJs", "VueJs", "ReactJs", "DotNet"],
-  testing: ["PHPUnit", "TDD", "Docker", "GitHub Actions", "Jenkins"],
-  databases: ["MySQL", "PostgreSQL", "MongoDB"],
+  testing: ["PHPUnit", "TDD", "Docker", "GitHub Actions", "Jenkins", "Grafana", "Datadog"],
+  databases: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch"],
   cloud: ["AWS", "GCP", "Azure"],
+  integrations: ["Apache Kafka", "Stripe", "Shopify", "Segment", "RevenueCat"],
 };
 
 export const categoryKeys: readonly TechCategory[] = [
@@ -43,6 +47,7 @@ export const categoryKeys: readonly TechCategory[] = [
   "testing",
   "databases",
   "cloud",
+  "integrations",
 ];
 
 export const openSourceKeys: readonly OpenSourceKey[] = [
@@ -63,4 +68,22 @@ export const openSourceLinks: Record<OpenSourceKey, string> = {
   mongolid: "https://github.com/leroy-merlin-br/mongolid",
 };
 
+export const personalProjectsMeta: Record<PersonalProjectsKey, PersonalProjectMeta> = {
+  luvia: {
+    url: "https://testflight.apple.com/join/Qhg7xcyK",
+    platform: "ios",
+  },
+};
+
 export const certKeys: readonly CertKey[] = ["cspo", "kanban", "devops", "wes"];
+
+export const softSkillKeys: readonly SoftSkillKey[] = [
+  "technicalLeadership",
+  "mentorship",
+  "crossFunctionalCollab",
+  "codeReview",
+  "agile",
+  "problemSolving",
+];
+
+export const languageKeys: readonly LanguageKey[] = ["portuguese", "english"];

@@ -7,9 +7,12 @@ import {
   openSourceKeys,
   openSourceLinks,
   personalProjectsKeys,
+  personalProjectsMeta,
   certKeys,
+  softSkillKeys,
+  languageKeys,
 } from "@/data/resume";
-import type { PdfResumeData } from "@/types/pdf";
+import type { PdfResumeData, PdfProject } from "@/types/pdf";
 
 export async function buildPdfResumeData(
   locale: string,
@@ -35,18 +38,27 @@ export async function buildPdfResumeData(
 
   const certifications = certKeys.map((key) => messages.education.certs[key]);
 
-  const openSource = openSourceKeys.map((key) => ({
+  const openSource: PdfProject[] = openSourceKeys.map((key) => ({
     name: messages.openSource.projects[key].name,
     role: messages.openSource.projects[key].role,
     description: messages.openSource.projects[key].description,
     url: openSourceLinks[key],
   }));
 
-  const personalProjects = personalProjectsKeys.map((key) => ({
+  const personalProjects: PdfProject[] = personalProjectsKeys.map((key) => ({
     name: messages.personalProjects.projects[key].name,
     role: messages.personalProjects.projects[key].role,
     description: messages.personalProjects.projects[key].description,
+    url: personalProjectsMeta[key].url,
   }));
+
+  const softSkills = softSkillKeys.map(
+    (key) => messages.softSkills.skills[key].name,
+  );
+
+  const languages = languageKeys.map(
+    (key) => messages.languages.items[key],
+  );
 
   const education = {
     institution: messages.education.degree.institution,
@@ -56,7 +68,7 @@ export async function buildPdfResumeData(
   };
 
   return {
-    name: messages.hero.name,
+    name: messages.hero.resumeName,
     title: messages.hero.title,
     summary: messages.about.description,
     contact: contactInfo,
@@ -67,6 +79,8 @@ export async function buildPdfResumeData(
     certifications,
     openSource,
     personalProjects,
+    softSkills,
+    languages,
     labels: {
       summary: messages.pdf.summary,
       experience: messages.experience.title,
@@ -75,6 +89,8 @@ export async function buildPdfResumeData(
       certificates: messages.education.certificates,
       openSource: messages.openSource.title,
       personalProjects: messages.personalProjects.title,
+      softSkills: messages.softSkills.title,
+      languages: messages.languages.title,
       technologies: messages.experience.technologies,
       present: messages.experience.present,
     },
