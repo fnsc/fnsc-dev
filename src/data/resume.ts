@@ -5,6 +5,7 @@ import type {
   TechCategory,
   OpenSourceKey,
   PersonalProjectsKey,
+  PersonalProjectMeta,
   CertKey,
   SoftSkillKey,
   LanguageKey,
@@ -67,12 +68,11 @@ export const openSourceLinks: Record<OpenSourceKey, string> = {
   mongolid: "https://github.com/leroy-merlin-br/mongolid",
 };
 
-export const personalProjectsLinks: Record<PersonalProjectsKey, string> = {
-  luvia: "https://testflight.apple.com/join/Qhg7xcyK",
-};
-
-export const personalProjectsPlatforms: Record<PersonalProjectsKey, "ios" | "web"> = {
-  luvia: "ios",
+export const personalProjectsMeta: Record<PersonalProjectsKey, PersonalProjectMeta> = {
+  luvia: {
+    url: "https://testflight.apple.com/join/Qhg7xcyK",
+    platform: "ios",
+  },
 };
 
 export const certKeys: readonly CertKey[] = ["cspo", "kanban", "devops", "wes"];

@@ -7,12 +7,12 @@ import {
   openSourceKeys,
   openSourceLinks,
   personalProjectsKeys,
-  personalProjectsLinks,
+  personalProjectsMeta,
   certKeys,
   softSkillKeys,
   languageKeys,
 } from "@/data/resume";
-import type { PdfResumeData } from "@/types/pdf";
+import type { PdfResumeData, PdfProject } from "@/types/pdf";
 
 export async function buildPdfResumeData(
   locale: string,
@@ -38,18 +38,18 @@ export async function buildPdfResumeData(
 
   const certifications = certKeys.map((key) => messages.education.certs[key]);
 
-  const openSource = openSourceKeys.map((key) => ({
+  const openSource: PdfProject[] = openSourceKeys.map((key) => ({
     name: messages.openSource.projects[key].name,
     role: messages.openSource.projects[key].role,
     description: messages.openSource.projects[key].description,
     url: openSourceLinks[key],
   }));
 
-  const personalProjects = personalProjectsKeys.map((key) => ({
+  const personalProjects: PdfProject[] = personalProjectsKeys.map((key) => ({
     name: messages.personalProjects.projects[key].name,
     role: messages.personalProjects.projects[key].role,
     description: messages.personalProjects.projects[key].description,
-    url: personalProjectsLinks[key],
+    url: personalProjectsMeta[key].url,
   }));
 
   const softSkills = softSkillKeys.map(

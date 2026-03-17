@@ -1,6 +1,6 @@
 import React from "react";
 import { Document, Page, Text, View, Link, StyleSheet } from "@react-pdf/renderer";
-import type { PdfResumeData } from "@/types/pdf";
+import type { PdfResumeData, PdfProject } from "@/types/pdf";
 
 const styles = StyleSheet.create({
   page: {
@@ -110,6 +110,34 @@ const styles = StyleSheet.create({
   },
 });
 
+function renderDescriptionLines(description: string) {
+  return description.split("\n").map((line, index) => (
+    <Text key={index} style={styles.jobDescription}>
+      • {line}
+    </Text>
+  ));
+}
+
+function PdfProjectList({ label, projects }: { label: string; projects: PdfProject[] }) {
+  return (
+    <View>
+      <Text style={styles.sectionTitle}>{label}</Text>
+      {projects.map((project, index) => (
+        <View key={index} style={styles.osBlock}>
+          <Text>
+            <Text style={styles.osName}>{project.name}</Text>
+            <Text style={styles.osRole}> ({project.role})</Text>
+            <Text> — {project.description} — </Text>
+            <Link src={project.url} style={styles.link}>
+              <Text>{project.url}</Text>
+            </Link>
+          </Text>
+        </View>
+      ))}
+    </View>
+  );
+}
+
 export default function ResumeDocument({ data }: { data: PdfResumeData }) {
   return (
     <Document
@@ -160,11 +188,7 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
                 <Text style={styles.jobPeriod}>{job.period}</Text>
               </View>
               <Text style={styles.jobCompany}>{job.company}</Text>
-              {job.description.split("\n").map((line, j) => (
-                <Text key={j} style={styles.jobDescription}>
-                  • {line}
-                </Text>
-              ))}
+              {renderDescriptionLines(job.description)}
               <Text style={styles.jobTech}>
                 {data.labels.technologies}: {job.tech}
               </Text>
@@ -205,38 +229,8 @@ export default function ResumeDocument({ data }: { data: PdfResumeData }) {
           ))}
         </View>
 
-        {/* Open Source */}
-        <View>
-          <Text style={styles.sectionTitle}>{data.labels.openSource}</Text>
-          {data.openSource.map((project, i) => (
-            <View key={i} style={styles.osBlock}>
-              <Text>
-                <Text style={styles.osName}>{project.name}</Text>
-                <Text style={styles.osRole}> ({project.role})</Text>
-                <Text> — {project.description} — </Text>
-                <Link src={project.url} style={styles.link}>
-                  <Text>{project.url}</Text>
-                </Link>
-              </Text>
-            </View>
-          ))}
-        </View>
-        {/* Personal Projects */}
-        <View>
-          <Text style={styles.sectionTitle}>{data.labels.personalProjects}</Text>
-          {data.personalProjects.map((project, i) => (
-            <View key={i} style={styles.osBlock}>
-              <Text>
-                <Text style={styles.osName}>{project.name}</Text>
-                <Text style={styles.osRole}> ({project.role})</Text>
-                <Text> — {project.description} — </Text>
-                <Link src={project.url} style={styles.link}>
-                  <Text>{project.url}</Text>
-                </Link>
-              </Text>
-            </View>
-          ))}
-        </View>
+        <PdfProjectList label={data.labels.openSource} projects={data.openSource} />
+        <PdfProjectList label={data.labels.personalProjects} projects={data.personalProjects} />
 
         {/* Soft Skills */}
         <View>

@@ -3,8 +3,10 @@
 import { useTranslations } from "next-intl";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./ui/SectionHeading";
-import Badge from "./ui/Badge";
-import { personalProjectsKeys, personalProjectsLinks, personalProjectsPlatforms } from "@/data/resume";
+import ProjectCard, { badgeVariantForRole } from "./ui/ProjectCard";
+import { personalProjectsKeys, personalProjectsMeta } from "@/data/resume";
+import type { Platform } from "@/types/resume";
+import { ReactNode } from "react";
 
 function AppleIcon() {
   return (
@@ -18,6 +20,11 @@ function AppleIcon() {
   );
 }
 
+function iconForPlatform(platform: Platform): ReactNode {
+  if (platform === "ios") return <AppleIcon />;
+  return null;
+}
+
 export default function PersonalProject() {
   const t = useTranslations("personalProjects");
 
@@ -28,27 +35,19 @@ export default function PersonalProject() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           {personalProjectsKeys.map((key) => {
+            const meta = personalProjectsMeta[key];
             const role = t(`projects.${key}.role`);
-            const isOwner = role === "owner";
+            const roleLabel = role === "owner" ? t("owner") : t("contributor");
 
             return (
-              <a
+              <ProjectCard
                 key={key}
-                href={personalProjectsLinks[key]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-6 transition-colors hover:border-primary"
-              >
-                <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold group-hover:text-primary">
-                    {t(`projects.${key}.name`)}
-                  </h3>
-                  <Badge variant={isOwner ? "primary" : "subtle"}>
-                    {isOwner ? t("owner") : t("contributor")}
-                  </Badge>
-                </div>
-                {personalProjectsPlatforms[key] === "ios" && <AppleIcon />}
-              </a>
+                href={meta.url}
+                name={t(`projects.${key}.name`)}
+                roleLabel={roleLabel}
+                badgeVariant={badgeVariantForRole(role)}
+                icon={iconForPlatform(meta.platform)}
+              />
             );
           })}
         </div>

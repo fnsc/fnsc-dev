@@ -8,14 +8,7 @@ export interface PdfJob {
   tech: string;
 }
 
-export interface PdfOpenSource {
-  name: string;
-  role: string;
-  description: string;
-  url: string;
-}
-
-export interface PdfPersonalProject {
+export interface PdfProject {
   name: string;
   role: string;
   description: string;
@@ -53,8 +46,8 @@ export interface PdfResumeData {
   categoryLabels: Record<string, string>;
   education: PdfEducation;
   certifications: string[];
-  openSource: PdfOpenSource[];
-  personalProjects: PdfPersonalProject[];
+  openSource: PdfProject[];
+  personalProjects: PdfProject[];
   softSkills: string[];
   languages: string[];
   labels: PdfLabels;

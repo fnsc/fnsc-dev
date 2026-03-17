@@ -41,3 +41,10 @@ export type SoftSkillKey =
   | "problemSolving";
 
 export type LanguageKey = "portuguese" | "english";
+
+export type Platform = "ios" | "web";
+
+export interface PersonalProjectMeta {
+  url: string;
+  platform: Platform;
+}
