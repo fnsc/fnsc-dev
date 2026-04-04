@@ -125,6 +125,11 @@
         "name": "Luvia",
         "role": "owner",
         "description": "Application iOS native permettant d'écouter sa bibliothèque musicale personnelle stockée dans iCloud ou localement, en utilisant un minimum d'espace sur l'appareil\nL'utilisateur sélectionne un répertoire et l'app répertorie tous les fichiers audio — aucune synchronisation avec un ordinateur requise\nIntégration Apple CarPlay et égaliseur 10 bandes pour une expérience d'écoute complète\nPage d'accueil affichant les sorties à venir et récentes (6 derniers mois) des artistes présents dans la bibliothèque de l'utilisateur"
+      },
+      "defuseGrid": {
+        "name": "Defuse Grid",
+        "role": "owner",
+        "description": "Un jeu iOS inspiré du Démineur où vous désamorcez une grille de bombes cachées à l'aide de la logique et de la déduction — un hommage moderne au classique Windows XP\nDisponible sur l'App Store"
       }
     }
   },
