@@ -59,6 +59,7 @@ export const openSourceKeys: readonly OpenSourceKey[] = [
 
 export const personalProjectsKeys: readonly PersonalProjectsKey[] = [
   "luvia",
+  "defuseGrid",
 ];
 
 export const openSourceLinks: Record<OpenSourceKey, string> = {
@@ -71,6 +72,10 @@ export const openSourceLinks: Record<OpenSourceKey, string> = {
 export const personalProjectsMeta: Record<PersonalProjectsKey, PersonalProjectMeta> = {
   luvia: {
     url: "https://testflight.apple.com/join/Qhg7xcyK",
+    platform: "ios",
+  },
+  defuseGrid: {
+    url: "https://apps.apple.com/us/app/defuse-grid/id6760957731",
     platform: "ios",
   },
 };

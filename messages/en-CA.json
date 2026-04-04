@@ -125,6 +125,11 @@
         "name": "Luvia",
         "role": "owner",
         "description": "Developing a native iOS app that lets users listen to their personal music library stored in iCloud or locally on device with minimal phone storage usage\nUsers select a directory and the app maps all music files — no computer sync required\nIntegrated Apple CarPlay support and a 10-band equalizer for a full listening experience\nBuilt a home screen surfacing upcoming releases and recent drops (last 6 months) from artists in the user's library"
+      },
+      "defuseGrid": {
+        "name": "Defuse Grid",
+        "role": "owner",
+        "description": "A Minesweeper-inspired iOS game where you defuse a grid of hidden bombs using logic and deduction — a modern tribute to the classic Windows XP game\nAvailable on the App Store"
       }
     }
   },
