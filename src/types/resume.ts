@@ -8,7 +8,7 @@ export interface ContactInfo {
   website: string;
 }
 
-export type JobKey = "loopio" | "netcoins" | "m56" | "leroy" | "masp" | "dvm";
+export type JobKey = "bcaa" | "loopio" | "netcoins" | "m56" | "leroy" | "masp" | "dvm";
 
 export interface TechStack {
   backend: string[];
