@@ -22,6 +22,7 @@ export const contactInfo: ContactInfo = {
 };
 
 export const jobKeys: readonly JobKey[] = [
+  "bcaa",
   "loopio",
   "netcoins",
   "m56",

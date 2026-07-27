@@ -36,6 +36,13 @@
     "present": "Presente",
     "technologies": "Tecnologias",
     "jobs": {
+      "bcaa": {
+        "role": "Engenheiro de Software",
+        "company": "BCAA",
+        "period": "Mai 2026 – Presente",
+        "description": "Desenvolvimento e entrega de funcionalidades fullstack para os marketplaces Task Marketplace e Auto Marketplace da BCAA\nAtuação com Node.js, React, AWS, Lambda, Python e Docker\nRealização de deploys e comando de pipelines de CI/CD durante o processo de entrega\nMonitoramento da saúde da aplicação utilizando pods do Kubernetes e ferramentas de linha de comando\nMelhoria de performance da homepage do Task Marketplace, elevando o score do Lighthouse de 28 para 90\nColaboração em um ambiente Agile com standups e outras cerimônias do framework\nUso de fluxos de trabalho assistidos por IA para acelerar as entregas mantendo a qualidade do software",
+        "tech": "NodeJS, React, AWS, AWS Lambda, Python, Docker, Kubernetes, CI/CD, Lighthouse, Agile, Desenvolvimento Assistido por IA"
+      },
       "loopio": {
         "role": "Engenheiro de Software",
         "company": "Loopio",
